@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0F091E17053B2C0063D682 /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0F091D17053B2C0063D682 /* reply.png */; };
+		4D0F0921170543460063D682 /* reply2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0F0920170543460063D682 /* reply2.png */; };
+		4D2451AF16FB303A00B84884 /* bubbleMine.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D2451AB16FB303A00B84884 /* bubbleMine.png */; };
+		4D2451B016FB303A00B84884 /* bubbleMine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D2451AC16FB303A00B84884 /* bubbleMine@2x.png */; };
+		4D2451B116FB303A00B84884 /* bubbleSomeone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D2451AD16FB303A00B84884 /* bubbleSomeone.png */; };
+		4D2451B216FB303A00B84884 /* bubbleSomeone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D2451AE16FB303A00B84884 /* bubbleSomeone@2x.png */; };
+		4D71540B1702D0E30071D69B /* PostDetailData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D71540A1702D0E30071D69B /* PostDetailData.m */; };
+		4D71540F1702D7090071D69B /* PostReplyOneData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D71540E1702D7090071D69B /* PostReplyOneData.m */; };
 		4D82898F16DF50BB00936CB5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D82898E16DF50BB00936CB5 /* UIKit.framework */; };
 		4D82899116DF50BB00936CB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D82899016DF50BB00936CB5 /* Foundation.framework */; };
 		4D82899316DF50BB00936CB5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D82899216DF50BB00936CB5 /* CoreGraphics.framework */; };
@@ -18,9 +26,47 @@
 		4D8289A516DF50BB00936CB5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8289A416DF50BB00936CB5 /* Default-568h@2x.png */; };
 		4D8289A816DF50BB00936CB5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8289A616DF50BB00936CB5 /* MainStoryboard.storyboard */; };
 		4D8289AB16DF50BB00936CB5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8289AA16DF50BB00936CB5 /* ViewController.m */; };
+		4D8CA18E1701441A009875E0 /* shortMessage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8CA18B1701441A009875E0 /* shortMessage1.png */; };
+		4D8CA18F1701441A009875E0 /* shortmessages.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8CA18C1701441A009875E0 /* shortmessages.png */; };
+		4D8CA19417014492009875E0 /* Heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8CA19317014492009875E0 /* Heart.png */; };
+		4D8CA19D170186CF009875E0 /* PostDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CA19C170186CF009875E0 /* PostDetailViewController.m */; };
+		4D92F17416FFF85D001BCB96 /* PostsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D92F17316FFF85D001BCB96 /* PostsListTableViewCell.xib */; };
+		4D92F17716FFFD66001BCB96 /* PostsListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D92F17616FFFD66001BCB96 /* PostsListTableViewCell.m */; };
+		4D92F17A17003652001BCB96 /* PostsListData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D92F17917003652001BCB96 /* PostsListData.m */; };
+		4D97470416EDBF370000B462 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D97470016EDBF370000B462 /* chat.png */; };
+		4D97470516EDBF370000B462 /* homepage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D97470116EDBF370000B462 /* homepage.png */; };
+		4D97470616EDBF370000B462 /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D97470216EDBF370000B462 /* logout.png */; };
+		4D97470716EDBF370000B462 /* myinfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D97470316EDBF370000B462 /* myinfo.png */; };
+		4D97470A16EDC2000000B462 /* GuildsMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97470916EDC2000000B462 /* GuildsMainViewController.m */; };
+		4D9A2AC516F17527005957E4 /* MainFuncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9A2AC416F17527005957E4 /* MainFuncViewController.m */; };
+		4D9A2AC916F176DB005957E4 /* MainFuncChatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9A2AC816F176DB005957E4 /* MainFuncChatView.m */; };
+		4D9A2ACD16F17878005957E4 /* MainFuncPostsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9A2ACC16F17878005957E4 /* MainFuncPostsView.m */; };
+		4D9A2AD116F17C89005957E4 /* MainFuncAnnouncementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9A2AD016F17C89005957E4 /* MainFuncAnnouncementView.m */; };
+		4D9A2AD416F1C8AA005957E4 /* testView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9A2AD316F1C8AA005957E4 /* testView.m */; };
+		4D9ABA3116E493DC0069C56B /* CreateGuildTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9ABA3016E493DC0069C56B /* CreateGuildTableViewController.m */; };
+		4D9B6EF616F0237E007F38E3 /* LastGuildListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9B6EF516F0237E007F38E3 /* LastGuildListCell.m */; };
+		4D9B6EF916F02B0A007F38E3 /* guildImg2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4D9B6EF816F02B0A007F38E3 /* guildImg2.jpg */; };
+		4D9B6EFC16F03071007F38E3 /* DetailGuildTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9B6EFB16F03071007F38E3 /* DetailGuildTableViewController.m */; };
+		4D9DCD9816EDA9FF0084B993 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DCD9716EDA9FF0084B993 /* LoginViewController.m */; };
+		4D9EA8CA16E7223200E710A5 /* FindGuildCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9EA8C916E7223200E710A5 /* FindGuildCell.m */; };
+		4DA0B9811702C21400F090A5 /* PostDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0B9801702C21400F090A5 /* PostDetailTableViewCell.m */; };
+		4DA0B9851702C2C100F090A5 /* PostReplyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0B9841702C2C100F090A5 /* PostReplyTableViewCell.m */; };
+		4DA0F61A16E5D3B5002D4531 /* guildImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DA0F61916E5D3B5002D4531 /* guildImg.jpg */; };
+		4DA0F61E16E5E060002D4531 /* FindGuildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0F61D16E5E060002D4531 /* FindGuildViewController.m */; };
+		4DED79D316F05BE600408F67 /* DetialGuildTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DED79D216F05BE600408F67 /* DetialGuildTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D0F091D17053B2C0063D682 /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply.png; sourceTree = "<group>"; };
+		4D0F0920170543460063D682 /* reply2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply2.png; sourceTree = "<group>"; };
+		4D2451AB16FB303A00B84884 /* bubbleMine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubbleMine.png; path = MainFunc/Chat/bubble/images/bubbleMine.png; sourceTree = "<group>"; };
+		4D2451AC16FB303A00B84884 /* bubbleMine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bubbleMine@2x.png"; path = "MainFunc/Chat/bubble/images/bubbleMine@2x.png"; sourceTree = "<group>"; };
+		4D2451AD16FB303A00B84884 /* bubbleSomeone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubbleSomeone.png; path = MainFunc/Chat/bubble/images/bubbleSomeone.png; sourceTree = "<group>"; };
+		4D2451AE16FB303A00B84884 /* bubbleSomeone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bubbleSomeone@2x.png"; path = "MainFunc/Chat/bubble/images/bubbleSomeone@2x.png"; sourceTree = "<group>"; };
+		4D7154091702D0E30071D69B /* PostDetailData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostDetailData.h; path = MainFunc/Posts/PostDetail/PostDetailData.h; sourceTree = "<group>"; };
+		4D71540A1702D0E30071D69B /* PostDetailData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostDetailData.m; path = MainFunc/Posts/PostDetail/PostDetailData.m; sourceTree = "<group>"; };
+		4D71540D1702D7090071D69B /* PostReplyOneData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostReplyOneData.h; path = MainFunc/Posts/PostDetail/PostReplyOneData.h; sourceTree = "<group>"; };
+		4D71540E1702D7090071D69B /* PostReplyOneData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostReplyOneData.m; path = MainFunc/Posts/PostDetail/PostReplyOneData.m; sourceTree = "<group>"; };
 		4D82898A16DF50BB00936CB5 /* Community2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Community2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D82898E16DF50BB00936CB5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4D82899016DF50BB00936CB5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -37,6 +83,53 @@
 		4D8289A716DF50BB00936CB5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4D8289A916DF50BB00936CB5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4D8289AA16DF50BB00936CB5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4D8CA18B1701441A009875E0 /* shortMessage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shortMessage1.png; sourceTree = "<group>"; };
+		4D8CA18C1701441A009875E0 /* shortmessages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shortmessages.png; sourceTree = "<group>"; };
+		4D8CA19317014492009875E0 /* Heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Heart.png; sourceTree = "<group>"; };
+		4D8CA19B170186CF009875E0 /* PostDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostDetailViewController.h; path = MainFunc/Posts/PostDetail/PostDetailViewController.h; sourceTree = "<group>"; };
+		4D8CA19C170186CF009875E0 /* PostDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostDetailViewController.m; path = MainFunc/Posts/PostDetail/PostDetailViewController.m; sourceTree = "<group>"; };
+		4D92F17316FFF85D001BCB96 /* PostsListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostsListTableViewCell.xib; path = MainFunc/Posts/PostsListTableViewCell.xib; sourceTree = "<group>"; };
+		4D92F17516FFFD66001BCB96 /* PostsListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostsListTableViewCell.h; path = MainFunc/Posts/PostsListTableViewCell.h; sourceTree = "<group>"; };
+		4D92F17616FFFD66001BCB96 /* PostsListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostsListTableViewCell.m; path = MainFunc/Posts/PostsListTableViewCell.m; sourceTree = "<group>"; };
+		4D92F17817003652001BCB96 /* PostsListData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostsListData.h; path = MainFunc/Posts/PostsListData.h; sourceTree = "<group>"; };
+		4D92F17917003652001BCB96 /* PostsListData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostsListData.m; path = MainFunc/Posts/PostsListData.m; sourceTree = "<group>"; };
+		4D97470016EDBF370000B462 /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chat.png; path = Guilds/chat.png; sourceTree = "<group>"; };
+		4D97470116EDBF370000B462 /* homepage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = homepage.png; path = Guilds/homepage.png; sourceTree = "<group>"; };
+		4D97470216EDBF370000B462 /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logout.png; path = Guilds/logout.png; sourceTree = "<group>"; };
+		4D97470316EDBF370000B462 /* myinfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = myinfo.png; path = Guilds/myinfo.png; sourceTree = "<group>"; };
+		4D97470816EDC2000000B462 /* GuildsMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuildsMainViewController.h; path = Guilds/GuildsMainViewController.h; sourceTree = "<group>"; };
+		4D97470916EDC2000000B462 /* GuildsMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuildsMainViewController.m; path = Guilds/GuildsMainViewController.m; sourceTree = "<group>"; };
+		4D9A2AC316F17527005957E4 /* MainFuncViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainFuncViewController.h; path = MainFunc/MainFuncViewController.h; sourceTree = "<group>"; };
+		4D9A2AC416F17527005957E4 /* MainFuncViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainFuncViewController.m; path = MainFunc/MainFuncViewController.m; sourceTree = "<group>"; };
+		4D9A2AC716F176DB005957E4 /* MainFuncChatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainFuncChatView.h; path = MainFunc/Chat/MainFuncChatView.h; sourceTree = "<group>"; };
+		4D9A2AC816F176DB005957E4 /* MainFuncChatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainFuncChatView.m; path = MainFunc/Chat/MainFuncChatView.m; sourceTree = "<group>"; };
+		4D9A2ACB16F17878005957E4 /* MainFuncPostsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainFuncPostsView.h; path = MainFunc/Posts/MainFuncPostsView.h; sourceTree = "<group>"; };
+		4D9A2ACC16F17878005957E4 /* MainFuncPostsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainFuncPostsView.m; path = MainFunc/Posts/MainFuncPostsView.m; sourceTree = "<group>"; };
+		4D9A2ACF16F17C89005957E4 /* MainFuncAnnouncementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainFuncAnnouncementView.h; path = MainFunc/Announcement/MainFuncAnnouncementView.h; sourceTree = "<group>"; };
+		4D9A2AD016F17C89005957E4 /* MainFuncAnnouncementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainFuncAnnouncementView.m; path = MainFunc/Announcement/MainFuncAnnouncementView.m; sourceTree = "<group>"; };
+		4D9A2AD216F1C8AA005957E4 /* testView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = testView.h; path = MainFunc/testView.h; sourceTree = "<group>"; };
+		4D9A2AD316F1C8AA005957E4 /* testView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = testView.m; path = MainFunc/testView.m; sourceTree = "<group>"; };
+		4D9ABA2F16E493DC0069C56B /* CreateGuildTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateGuildTableViewController.h; path = CreateGuild/CreateGuildTableViewController.h; sourceTree = "<group>"; };
+		4D9ABA3016E493DC0069C56B /* CreateGuildTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateGuildTableViewController.m; path = CreateGuild/CreateGuildTableViewController.m; sourceTree = "<group>"; };
+		4D9B6EF416F0237E007F38E3 /* LastGuildListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LastGuildListCell.h; path = Guilds/LastGuildListCell.h; sourceTree = "<group>"; };
+		4D9B6EF516F0237E007F38E3 /* LastGuildListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LastGuildListCell.m; path = Guilds/LastGuildListCell.m; sourceTree = "<group>"; };
+		4D9B6EF816F02B0A007F38E3 /* guildImg2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guildImg2.jpg; sourceTree = "<group>"; };
+		4D9B6EFA16F03071007F38E3 /* DetailGuildTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailGuildTableViewController.h; path = Guilds/DetailGuildTableViewController.h; sourceTree = "<group>"; };
+		4D9B6EFB16F03071007F38E3 /* DetailGuildTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailGuildTableViewController.m; path = Guilds/DetailGuildTableViewController.m; sourceTree = "<group>"; };
+		4D9DCD9616EDA9FF0084B993 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = loginRegist/LoginViewController.h; sourceTree = "<group>"; };
+		4D9DCD9716EDA9FF0084B993 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = loginRegist/LoginViewController.m; sourceTree = "<group>"; };
+		4D9EA8C816E7223200E710A5 /* FindGuildCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FindGuildCell.h; path = JoinGuild/FindGuildCell.h; sourceTree = "<group>"; };
+		4D9EA8C916E7223200E710A5 /* FindGuildCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FindGuildCell.m; path = JoinGuild/FindGuildCell.m; sourceTree = "<group>"; };
+		4DA0B97F1702C21400F090A5 /* PostDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostDetailTableViewCell.h; path = MainFunc/Posts/PostDetail/PostDetailTableViewCell.h; sourceTree = "<group>"; };
+		4DA0B9801702C21400F090A5 /* PostDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostDetailTableViewCell.m; path = MainFunc/Posts/PostDetail/PostDetailTableViewCell.m; sourceTree = "<group>"; };
+		4DA0B9831702C2C100F090A5 /* PostReplyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostReplyTableViewCell.h; path = MainFunc/Posts/PostDetail/PostReplyTableViewCell.h; sourceTree = "<group>"; };
+		4DA0B9841702C2C100F090A5 /* PostReplyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostReplyTableViewCell.m; path = MainFunc/Posts/PostDetail/PostReplyTableViewCell.m; sourceTree = "<group>"; };
+		4DA0F61616E5C696002D4531 /* CreateGuildMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CreateGuildMacro.h; path = CreateGuild/CreateGuildMacro.h; sourceTree = "<group>"; };
+		4DA0F61916E5D3B5002D4531 /* guildImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = guildImg.jpg; path = CreateGuild/Resource/guildImg.jpg; sourceTree = "<group>"; };
+		4DA0F61C16E5E060002D4531 /* FindGuildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FindGuildViewController.h; path = JoinGuild/FindGuildViewController.h; sourceTree = "<group>"; };
+		4DA0F61D16E5E060002D4531 /* FindGuildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FindGuildViewController.m; path = JoinGuild/FindGuildViewController.m; sourceTree = "<group>"; };
+		4DED79D116F05BE600408F67 /* DetialGuildTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetialGuildTableViewCell.h; path = Guilds/DetialGuildTableViewCell.h; sourceTree = "<group>"; };
+		4DED79D216F05BE600408F67 /* DetialGuildTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetialGuildTableViewCell.m; path = Guilds/DetialGuildTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +146,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D24519E16FB2C4D00B84884 /* Bubble */ = {
+			isa = PBXGroup;
+			children = (
+				4D2451AA16FB2FF200B84884 /* imgs */,
+			);
+			name = Bubble;
+			sourceTree = "<group>";
+		};
+		4D2451AA16FB2FF200B84884 /* imgs */ = {
+			isa = PBXGroup;
+			children = (
+				4D2451AB16FB303A00B84884 /* bubbleMine.png */,
+				4D2451AC16FB303A00B84884 /* bubbleMine@2x.png */,
+				4D2451AD16FB303A00B84884 /* bubbleSomeone.png */,
+				4D2451AE16FB303A00B84884 /* bubbleSomeone@2x.png */,
+			);
+			name = imgs;
+			sourceTree = "<group>";
+		};
 		4D82897F16DF50BB00936CB5 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +195,11 @@
 		4D82899416DF50BB00936CB5 /* Community2 */ = {
 			isa = PBXGroup;
 			children = (
+				4D9A2AC116F174F1005957E4 /* MainFuncs */,
+				4D9DCD9916EDB2FF0084B993 /* Guilds */,
+				4D9DCD9416EDA9A30084B993 /* loginRegist */,
+				4DA0F61B16E5DFFF002D4531 /* JoinGuild */,
+				4DA4406C16E47DD00075F4FF /* CreateGuild */,
 				4D82899D16DF50BB00936CB5 /* AppDelegate.h */,
 				4D82899E16DF50BB00936CB5 /* AppDelegate.m */,
 				4D8289A616DF50BB00936CB5 /* MainStoryboard.storyboard */,
@@ -105,6 +222,152 @@
 				4D8289A416DF50BB00936CB5 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4D8CA1891701441A009875E0 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				4D0F0920170543460063D682 /* reply2.png */,
+				4D8CA19317014492009875E0 /* Heart.png */,
+				4D0F091D17053B2C0063D682 /* reply.png */,
+				4D8CA18B1701441A009875E0 /* shortMessage1.png */,
+				4D8CA18C1701441A009875E0 /* shortmessages.png */,
+			);
+			name = images;
+			path = MainFunc/Posts/images;
+			sourceTree = "<group>";
+		};
+		4D8CA19917017C6A009875E0 /* PostDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				4D8CA19B170186CF009875E0 /* PostDetailViewController.h */,
+				4D8CA19C170186CF009875E0 /* PostDetailViewController.m */,
+				4DA0B97F1702C21400F090A5 /* PostDetailTableViewCell.h */,
+				4DA0B9801702C21400F090A5 /* PostDetailTableViewCell.m */,
+				4DA0B9831702C2C100F090A5 /* PostReplyTableViewCell.h */,
+				4DA0B9841702C2C100F090A5 /* PostReplyTableViewCell.m */,
+				4D7154091702D0E30071D69B /* PostDetailData.h */,
+				4D71540A1702D0E30071D69B /* PostDetailData.m */,
+				4D71540D1702D7090071D69B /* PostReplyOneData.h */,
+				4D71540E1702D7090071D69B /* PostReplyOneData.m */,
+			);
+			name = PostDetailView;
+			sourceTree = "<group>";
+		};
+		4D9A2AC116F174F1005957E4 /* MainFuncs */ = {
+			isa = PBXGroup;
+			children = (
+				4D9A2ACE16F17A34005957E4 /* Announcement */,
+				4D9A2ACA16F177A0005957E4 /* Posts */,
+				4D9A2AC616F17687005957E4 /* Chat */,
+				4D9A2AC316F17527005957E4 /* MainFuncViewController.h */,
+				4D9A2AC416F17527005957E4 /* MainFuncViewController.m */,
+				4D9A2AD216F1C8AA005957E4 /* testView.h */,
+				4D9A2AD316F1C8AA005957E4 /* testView.m */,
+			);
+			name = MainFuncs;
+			sourceTree = "<group>";
+		};
+		4D9A2AC616F17687005957E4 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				4D24519E16FB2C4D00B84884 /* Bubble */,
+				4D9A2AC716F176DB005957E4 /* MainFuncChatView.h */,
+				4D9A2AC816F176DB005957E4 /* MainFuncChatView.m */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		4D9A2ACA16F177A0005957E4 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				4D8CA19917017C6A009875E0 /* PostDetailView */,
+				4D8CA1891701441A009875E0 /* images */,
+				4D9A2ACB16F17878005957E4 /* MainFuncPostsView.h */,
+				4D9A2ACC16F17878005957E4 /* MainFuncPostsView.m */,
+				4D92F17316FFF85D001BCB96 /* PostsListTableViewCell.xib */,
+				4D92F17516FFFD66001BCB96 /* PostsListTableViewCell.h */,
+				4D92F17616FFFD66001BCB96 /* PostsListTableViewCell.m */,
+				4D92F17817003652001BCB96 /* PostsListData.h */,
+				4D92F17917003652001BCB96 /* PostsListData.m */,
+			);
+			name = Posts;
+			sourceTree = "<group>";
+		};
+		4D9A2ACE16F17A34005957E4 /* Announcement */ = {
+			isa = PBXGroup;
+			children = (
+				4D9A2ACF16F17C89005957E4 /* MainFuncAnnouncementView.h */,
+				4D9A2AD016F17C89005957E4 /* MainFuncAnnouncementView.m */,
+			);
+			name = Announcement;
+			sourceTree = "<group>";
+		};
+		4D9DCD9416EDA9A30084B993 /* loginRegist */ = {
+			isa = PBXGroup;
+			children = (
+				4D9DCD9616EDA9FF0084B993 /* LoginViewController.h */,
+				4D9DCD9716EDA9FF0084B993 /* LoginViewController.m */,
+			);
+			name = loginRegist;
+			sourceTree = "<group>";
+		};
+		4D9DCD9916EDB2FF0084B993 /* Guilds */ = {
+			isa = PBXGroup;
+			children = (
+				4D9DCDA616EDB6690084B993 /* Resource */,
+				4D97470816EDC2000000B462 /* GuildsMainViewController.h */,
+				4D97470916EDC2000000B462 /* GuildsMainViewController.m */,
+				4D9B6EF416F0237E007F38E3 /* LastGuildListCell.h */,
+				4D9B6EF516F0237E007F38E3 /* LastGuildListCell.m */,
+				4D9B6EFA16F03071007F38E3 /* DetailGuildTableViewController.h */,
+				4D9B6EFB16F03071007F38E3 /* DetailGuildTableViewController.m */,
+				4DED79D116F05BE600408F67 /* DetialGuildTableViewCell.h */,
+				4DED79D216F05BE600408F67 /* DetialGuildTableViewCell.m */,
+			);
+			name = Guilds;
+			sourceTree = "<group>";
+		};
+		4D9DCDA616EDB6690084B993 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4D97470016EDBF370000B462 /* chat.png */,
+				4D97470116EDBF370000B462 /* homepage.png */,
+				4D97470216EDBF370000B462 /* logout.png */,
+				4D97470316EDBF370000B462 /* myinfo.png */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		4DA0F61816E5D309002D4531 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4D9B6EF816F02B0A007F38E3 /* guildImg2.jpg */,
+				4DA0F61916E5D3B5002D4531 /* guildImg.jpg */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		4DA0F61B16E5DFFF002D4531 /* JoinGuild */ = {
+			isa = PBXGroup;
+			children = (
+				4DA0F61C16E5E060002D4531 /* FindGuildViewController.h */,
+				4DA0F61D16E5E060002D4531 /* FindGuildViewController.m */,
+				4D9EA8C816E7223200E710A5 /* FindGuildCell.h */,
+				4D9EA8C916E7223200E710A5 /* FindGuildCell.m */,
+			);
+			name = JoinGuild;
+			sourceTree = "<group>";
+		};
+		4DA4406C16E47DD00075F4FF /* CreateGuild */ = {
+			isa = PBXGroup;
+			children = (
+				4DA0F61816E5D309002D4531 /* Resource */,
+				4D9ABA2F16E493DC0069C56B /* CreateGuildTableViewController.h */,
+				4D9ABA3016E493DC0069C56B /* CreateGuildTableViewController.m */,
+				4DA0F61616E5C696002D4531 /* CreateGuildMacro.h */,
+			);
+			name = CreateGuild;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +426,22 @@
 				4D8289A316DF50BB00936CB5 /* Default@2x.png in Resources */,
 				4D8289A516DF50BB00936CB5 /* Default-568h@2x.png in Resources */,
 				4D8289A816DF50BB00936CB5 /* MainStoryboard.storyboard in Resources */,
+				4DA0F61A16E5D3B5002D4531 /* guildImg.jpg in Resources */,
+				4D97470416EDBF370000B462 /* chat.png in Resources */,
+				4D97470516EDBF370000B462 /* homepage.png in Resources */,
+				4D97470616EDBF370000B462 /* logout.png in Resources */,
+				4D97470716EDBF370000B462 /* myinfo.png in Resources */,
+				4D9B6EF916F02B0A007F38E3 /* guildImg2.jpg in Resources */,
+				4D2451AF16FB303A00B84884 /* bubbleMine.png in Resources */,
+				4D2451B016FB303A00B84884 /* bubbleMine@2x.png in Resources */,
+				4D2451B116FB303A00B84884 /* bubbleSomeone.png in Resources */,
+				4D2451B216FB303A00B84884 /* bubbleSomeone@2x.png in Resources */,
+				4D92F17416FFF85D001BCB96 /* PostsListTableViewCell.xib in Resources */,
+				4D8CA18E1701441A009875E0 /* shortMessage1.png in Resources */,
+				4D8CA18F1701441A009875E0 /* shortmessages.png in Resources */,
+				4D8CA19417014492009875E0 /* Heart.png in Resources */,
+				4D0F091E17053B2C0063D682 /* reply.png in Resources */,
+				4D0F0921170543460063D682 /* reply2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +455,26 @@
 				4D82899B16DF50BB00936CB5 /* main.m in Sources */,
 				4D82899F16DF50BB00936CB5 /* AppDelegate.m in Sources */,
 				4D8289AB16DF50BB00936CB5 /* ViewController.m in Sources */,
+				4D9ABA3116E493DC0069C56B /* CreateGuildTableViewController.m in Sources */,
+				4DA0F61E16E5E060002D4531 /* FindGuildViewController.m in Sources */,
+				4D9EA8CA16E7223200E710A5 /* FindGuildCell.m in Sources */,
+				4D9DCD9816EDA9FF0084B993 /* LoginViewController.m in Sources */,
+				4D97470A16EDC2000000B462 /* GuildsMainViewController.m in Sources */,
+				4D9B6EF616F0237E007F38E3 /* LastGuildListCell.m in Sources */,
+				4D9B6EFC16F03071007F38E3 /* DetailGuildTableViewController.m in Sources */,
+				4DED79D316F05BE600408F67 /* DetialGuildTableViewCell.m in Sources */,
+				4D9A2AC516F17527005957E4 /* MainFuncViewController.m in Sources */,
+				4D9A2AC916F176DB005957E4 /* MainFuncChatView.m in Sources */,
+				4D9A2ACD16F17878005957E4 /* MainFuncPostsView.m in Sources */,
+				4D9A2AD116F17C89005957E4 /* MainFuncAnnouncementView.m in Sources */,
+				4D9A2AD416F1C8AA005957E4 /* testView.m in Sources */,
+				4D92F17716FFFD66001BCB96 /* PostsListTableViewCell.m in Sources */,
+				4D92F17A17003652001BCB96 /* PostsListData.m in Sources */,
+				4D8CA19D170186CF009875E0 /* PostDetailViewController.m in Sources */,
+				4DA0B9811702C21400F090A5 /* PostDetailTableViewCell.m in Sources */,
+				4DA0B9851702C2C100F090A5 /* PostReplyTableViewCell.m in Sources */,
+				4D71540B1702D0E30071D69B /* PostDetailData.m in Sources */,
+				4D71540F1702D7090071D69B /* PostReplyOneData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +522,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -244,7 +543,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -257,7 +556,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Community2/Community2-Prefix.pch";
 				INFOPLIST_FILE = "Community2/Community2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -268,7 +569,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Community2/Community2-Prefix.pch";
 				INFOPLIST_FILE = "Community2/Community2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -292,6 +595,7 @@
 				4D8289B016DF50BB00936CB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

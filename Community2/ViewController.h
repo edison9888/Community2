@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CreateGuildTableViewController.h"
+#import "FindGuildViewController.h"
+#import "LoginViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<FirstViewControllerDelegate>
 
 @end
