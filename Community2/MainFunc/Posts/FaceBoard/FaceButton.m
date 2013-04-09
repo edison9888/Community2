@@ -1,14 +1,15 @@
 //
-//  testView.m
+//  FaceButton.m
 //  Community2
 //
-//  Created by 赵 峰 on 13-3-14.
+//  Created by 赵 峰 on 13-4-9.
 //  Copyright (c) 2013年 赵 峰. All rights reserved.
 //
 
-#import "testView.h"
+#import "FaceButton.h"
 
-@implementation testView
+@implementation FaceButton
+@synthesize buttonIndex;
 
 - (id)initWithFrame:(CGRect)frame
 {

@@ -8,13 +8,14 @@
 
 #import "PostDetailViewController.h"
 #import "PostReplyOneData.h"
+#import "ReplyEditViewController.h"
 
 
 #define TABLEVIEW_TAG     101
 #define POSTCELLVIEW_TAG  102
 #define REPLYCELLVIEW_TAG 103
 
-#define REPLY_SEGMENT_NUM   1
+#define REPLY_SEGMENT_NUM   0
 
 @interface PostDetailViewController ()
 
@@ -54,11 +55,15 @@
     
 }
 
-- (IBAction)segmentAction:(id)sender
+- (void)segmentAction:(id)sender
 {
     UISegmentedControl *sementedControl = (UISegmentedControl *)sender;
     if (sementedControl.selectedSegmentIndex == REPLY_SEGMENT_NUM) {
+       
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        ReplyEditViewController *replyEditViewController = [storyboard instantiateViewControllerWithIdentifier:@"ReplyEditViewController"];
         
+        [self.navigationController pushViewController:replyEditViewController animated:YES];
     }
     
     sementedControl = nil;
