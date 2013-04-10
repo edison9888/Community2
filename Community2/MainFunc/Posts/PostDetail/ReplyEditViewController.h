@@ -18,5 +18,8 @@
 
 @property (nonatomic, retain) UIToolbar *keyboardToolbar;
 @property (nonatomic, retain) IBOutlet UITextView *textView;
+@property (nonatomic, strong) id ownerDelegate;
+
+
 
 @end

@@ -11,4 +11,6 @@
 @interface PostDetailData : NSObject
 
 @property (nonatomic, strong)NSMutableDictionary *postDetailDic;
+
+- (int)addNewReplyData:(NSString *)replayMessage;
 @end

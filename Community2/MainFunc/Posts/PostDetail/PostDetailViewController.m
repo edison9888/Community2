@@ -9,6 +9,7 @@
 #import "PostDetailViewController.h"
 #import "PostReplyOneData.h"
 #import "ReplyEditViewController.h"
+#import "RichTextView.h"
 
 
 #define TABLEVIEW_TAG     101
@@ -63,6 +64,8 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         ReplyEditViewController *replyEditViewController = [storyboard instantiateViewControllerWithIdentifier:@"ReplyEditViewController"];
         
+        replyEditViewController.ownerDelegate = self;
+        
         [self.navigationController pushViewController:replyEditViewController animated:YES];
     }
     
@@ -80,6 +83,25 @@
     [super viewDidUnload];
 }
 
+- (void)dealloc
+{
+    _postDetailData = nil;
+    _repliesArray = nil;
+    
+}
+
+- (int)addNewReply:(NSString *)replayMessage
+{
+    [_postDetailData addNewReplyData:replayMessage];
+    _repliesArray = [_postDetailData.postDetailDic objectForKey:@"replys"];
+    
+    UITableView *postDetailTable = (UITableView *)[self.view viewWithTag:TABLEVIEW_TAG];
+    [postDetailTable reloadData];
+    postDetailTable = nil;
+    
+    return 0;
+}
+
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -93,13 +115,6 @@
     {
         return 2;
     }
-    
-}
-
-- (void)dealloc
-{
-    _postDetailData = nil;
-    _repliesArray = nil;
     
 }
 
@@ -170,10 +185,16 @@
         cell.postReplyHeadImgView.image = replyData.headImg;
         cell.postReplyImgView.image = replyData.contentImg;
         
-        UIFont *font = [UIFont systemFontOfSize:12];
-        CGSize size = [cell.postReplyContentLabel.text sizeWithFont:font constrainedToSize:CGSizeMake(280.0f, 2000.0f) lineBreakMode:UILineBreakModeWordWrap];
-        [cell.postReplyContentLabel setFont:[UIFont systemFontOfSize:12]];
+//        UIFont *font = [UIFont systemFontOfSize:12];
+//        CGSize size = [cell.postReplyContentLabel.text sizeWithFont:font constrainedToSize:CGSizeMake(280.0f, 2000.0f) lineBreakMode:UILineBreakModeWordWrap];
+//        [cell.postReplyContentLabel setFont:[UIFont systemFontOfSize:12]];
+//        [cell.postReplyContentLabel setFrame:CGRectMake(20, 56, size.width + 10, size.height)];
+        
+        RichTextView *richTextView = [[RichTextView alloc] initWithRichMessage:replyData.content];
+        [cell setContentRichView:richTextView];
+        CGSize size = richTextView.frame.size;
         [cell.postReplyContentLabel setFrame:CGRectMake(20, 56, size.width + 10, size.height)];
+        cell.postReplyContentLabel.text = @"";
         cell.postReplyContentLabel.numberOfLines = 0;
         
         [cell.postReplyImgView setFrame:CGRectMake(20, 56 + 8 + size.height, 280, 80)];

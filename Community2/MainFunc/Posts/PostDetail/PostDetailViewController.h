@@ -17,5 +17,7 @@
     NSMutableArray *_repliesArray;
 }
 
+- (int)addNewReply:(NSString *)replayMessage;
+
 
 @end

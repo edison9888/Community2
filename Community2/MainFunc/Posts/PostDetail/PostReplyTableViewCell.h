@@ -7,13 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RichTextView.h"
 
 @interface PostReplyTableViewCell : UITableViewCell
+{
+    
+}
 @property (strong, nonatomic) IBOutlet UIImageView *postReplyHeadImgView;
 @property (strong, nonatomic) IBOutlet UILabel *postReplyAuthorLabel;
 @property (strong, nonatomic) IBOutlet UILabel *postReplyDateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *postReplyFloorLabel;
 @property (strong, nonatomic) IBOutlet UILabel *postReplyContentLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *postReplyImgView;
+
+@property (strong, nonatomic) RichTextView *contentRichTextView;
+
+-(int) setContentRichView:(RichTextView *)contentView;
 
 @end

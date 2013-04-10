@@ -28,13 +28,28 @@
         NSMutableArray *replyArray = [[NSMutableArray alloc] init];
         for (int i = 0; i < 5; i++)
         {
-            PostReplyOneData *postReply = [PostReplyOneData initWithSelfData:@"赵峰" replyDate:@"2013-03-27 18:11" floor:[[NSString alloc] initWithFormat:@"%i楼", i+2] content:@"十五字，经验到手，你妈没到。。。。。fjdsakljflkasjfl;kasjflk;sdajflkjasdlkfjsdalkfjsadlkjfsdal;" headImg:[UIImage imageNamed:@"guildImg.jpg"] contentImg:[UIImage imageNamed:@"guildImg2.jpg"]];
+//            PostReplyOneData *postReply = [PostReplyOneData initWithSelfData:@"赵峰" replyDate:@"2013-03-27 18:11" floor:[[NSString alloc] initWithFormat:@"%i楼", i+2] content:@"十五字，经验到手，你妈没到。。。。。fjdsakljflkasjfl;kasjflk;sdajflkjasdlkfjsdalkfjsadlkjfsdal;" headImg:[UIImage imageNamed:@"guildImg.jpg"] contentImg:[UIImage imageNamed:@"guildImg2.jpg"]];
+            
+            PostReplyOneData *postReply = [PostReplyOneData initWithSelfData:@"赵峰" replyDate:@"2013-03-27 18:11" floor:[[NSString alloc] initWithFormat:@"%i楼", i+2] content:@"十五字" headImg:[UIImage imageNamed:@"guildImg.jpg"] contentImg:[UIImage imageNamed:@"guildImg2.jpg"]];
             [replyArray addObject:postReply];
         }
         [self.postDetailDic setObject:replyArray forKey:@"replys"];
 
     }
     return self;
+}
+
+- (int)addNewReplyData:(NSString *)replayMessage
+{
+    NSMutableArray *replyArray = [self.postDetailDic objectForKey:@"replys"];
+    
+    PostReplyOneData *postReply = [PostReplyOneData initWithSelfData:@"赵峰" replyDate:@"2013-03-27 18:11" floor:[[NSString alloc] initWithFormat:@"%i楼", [replyArray count]+2] content:replayMessage headImg:[UIImage imageNamed:@"guildImg.jpg"] contentImg:[UIImage imageNamed:@"guildImg2.jpg"]];
+    
+    [replyArray addObject:postReply];
+    
+    [self.postDetailDic setObject:replyArray forKey:@"replys"];
+    
+    return 0;
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "ReplyEditViewController.h"
 #import "FaceBoardView.h"
 #import "RichTextView.h"
+#import "PostDetailViewController.h"
 
 Boolean keyboardShouldChange = TRUE;
 Boolean showFaceBoard = FALSE;
@@ -19,7 +20,7 @@ Boolean showFaceBoard = FALSE;
 
 @implementation ReplyEditViewController
 
-@synthesize keyboardToolbar, textView;
+@synthesize keyboardToolbar, textView, ownerDelegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -71,6 +72,7 @@ Boolean showFaceBoard = FALSE;
     self.keyboardToolbar = nil;
     self.textView = nil;
     _faceBoardView = nil;
+    self.ownerDelegate = nil;
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
@@ -189,6 +191,10 @@ Boolean showFaceBoard = FALSE;
 - (void)clickPostBarBtn:(id)sender
 {
     NSLog(@"post a reply");
+    
+    NSString *replyMessage = self.textView.text;
+    [(PostDetailViewController *)ownerDelegate addNewReply:replyMessage];
+    self.textView.text = @"";
     
     [self.navigationController popViewControllerAnimated:YES];
 }
