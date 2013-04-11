@@ -528,11 +528,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Community2/MainFunc/Posts/PostDetail/PostDetailViewController.m"
-         timestampString = "387264923.209089"
+         timestampString = "387359666.216158"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "61"
-         endingLineNumber = "61"
+         startingLineNumber = "103"
+         endingLineNumber = "103"
          landmarkName = "-segmentAction:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -541,11 +541,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Community2/MainFunc/Posts/PostDetail/ReplyEditViewController.m"
-         timestampString = "387257793.617693"
+         timestampString = "387343165.928058"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "98"
-         endingLineNumber = "98"
+         startingLineNumber = "99"
+         endingLineNumber = "99"
          landmarkName = "-keyboardWillShow:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -554,11 +554,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Community2/MainFunc/Posts/PostDetail/ReplyEditViewController.m"
-         timestampString = "387257793.617693"
+         timestampString = "387343165.928058"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "88"
-         endingLineNumber = "88"
+         startingLineNumber = "89"
+         endingLineNumber = "89"
          landmarkName = "-keyboardWillShow:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -567,11 +567,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Community2/MainFunc/Posts/PostDetail/ReplyEditViewController.m"
-         timestampString = "387257793.617693"
+         timestampString = "387343165.928058"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "139"
-         endingLineNumber = "139"
+         startingLineNumber = "140"
+         endingLineNumber = "140"
          landmarkName = "-keyboardWillHide:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -580,11 +580,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Community2/MainFunc/Posts/PostDetail/ReplyEditViewController.m"
-         timestampString = "387257793.617693"
+         timestampString = "387343165.928058"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "164"
-         endingLineNumber = "164"
+         startingLineNumber = "165"
+         endingLineNumber = "165"
          landmarkName = "-keyboardDidHide:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -593,11 +593,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Community2/MainFunc/Posts/PostDetail/PostDetailViewController.m"
-         timestampString = "387265646.186565"
+         timestampString = "387360335.135302"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "150"
-         endingLineNumber = "150"
+         startingLineNumber = "223"
+         endingLineNumber = "223"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -606,11 +606,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Community2/MainFunc/Posts/PostDetail/PostDetailViewController.m"
-         timestampString = "387265771.478233"
+         timestampString = "387360335.135302"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "175"
-         endingLineNumber = "175"
+         startingLineNumber = "248"
+         endingLineNumber = "248"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -693,46 +693,46 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Community2/MainFunc/Posts/PostDetail/PostDetailViewController.m"
-         timestampString = "387268621.596803"
+         timestampString = "387360335.135302"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "96"
-         endingLineNumber = "96"
+         startingLineNumber = "170"
+         endingLineNumber = "170"
          landmarkName = "-addNewReply:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Community2/MainFunc/Posts/PostDetail/PostDetailViewController.m"
-         timestampString = "387268645.300616"
+         timestampString = "387360335.135302"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "180"
-         endingLineNumber = "180"
+         startingLineNumber = "253"
+         endingLineNumber = "253"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Community2/MainFunc/Posts/PostDetail/PostDetailViewController.m"
-         timestampString = "387268848.633762"
+         timestampString = "387360335.135302"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "194"
-         endingLineNumber = "194"
+         startingLineNumber = "267"
+         endingLineNumber = "267"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Community2/MainFunc/Posts/RichTextView/RichTextView.m"
@@ -745,7 +745,7 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Community2/MainFunc/Posts/RichTextView/RichTextView.m"
@@ -755,6 +755,32 @@
          startingLineNumber = "151"
          endingLineNumber = "151"
          landmarkName = "-initWithRichMessage:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Community2/MainFunc/Posts/PostDetail/PostDetailViewController.m"
+         timestampString = "387359666.216158"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "118"
+         endingLineNumber = "118"
+         landmarkName = "-segmentAction:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Community2/MainFunc/Posts/PostDetail/PostDetailViewController.m"
+         timestampString = "387360860.490891"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "123"
+         endingLineNumber = "123"
+         landmarkName = "-segmentAction:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

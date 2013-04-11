@@ -10,6 +10,7 @@
 #import "PostReplyOneData.h"
 #import "ReplyEditViewController.h"
 #import "RichTextView.h"
+#import "PostDetailPopContentViewController.h"
 
 
 #define TABLEVIEW_TAG     101
@@ -17,12 +18,15 @@
 #define REPLYCELLVIEW_TAG 103
 
 #define REPLY_SEGMENT_NUM   0
+#define POPUP_SEGMENT_NUM   1
 
 @interface PostDetailViewController ()
 
 @end
 
 @implementation PostDetailViewController
+
+@synthesize popoverController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,6 +60,44 @@
     
 }
 
+/**
+ Thanks to Paul Solt for supplying these background images and container view properties
+ */
+- (WEPopoverContainerViewProperties *)improvedContainerViewProperties {
+	
+	WEPopoverContainerViewProperties *props = [WEPopoverContainerViewProperties alloc];
+	NSString *bgImageName = nil;
+	CGFloat bgMargin = 0.0;
+	CGFloat bgCapSize = 0.0;
+	CGFloat contentMargin = 4.0;
+	
+	bgImageName = @"popoverBg.png";
+	
+	// These constants are determined by the popoverBg.png image file and are image dependent
+	bgMargin = 13; // margin width of 13 pixels on all sides popoverBg.png (62 pixels wide - 36 pixel background) / 2 == 26 / 2 == 13
+	bgCapSize = 31; // ImageSize/2  == 62 / 2 == 31 pixels
+	
+	props.leftBgMargin = bgMargin;
+	props.rightBgMargin = bgMargin;
+	props.topBgMargin = bgMargin;
+	props.bottomBgMargin = bgMargin;
+	props.leftBgCapSize = bgCapSize;
+	props.topBgCapSize = bgCapSize;
+	props.bgImageName = bgImageName;
+	props.leftContentMargin = contentMargin;
+	props.rightContentMargin = contentMargin - 1; // Need to shift one pixel for border to look correct
+	props.topContentMargin = contentMargin;
+	props.bottomContentMargin = contentMargin;
+	
+	props.arrowMargin = 4.0;
+	
+	props.upArrowImageName = @"popoverArrowUp.png";
+	props.downArrowImageName = @"popoverArrowDown.png";
+	props.leftArrowImageName = @"popoverArrowLeft.png";
+	props.rightArrowImageName = @"popoverArrowRight.png";
+	return props;
+}
+
 - (void)segmentAction:(id)sender
 {
     UISegmentedControl *sementedControl = (UISegmentedControl *)sender;
@@ -67,6 +109,38 @@
         replyEditViewController.ownerDelegate = self;
         
         [self.navigationController pushViewController:replyEditViewController animated:YES];
+    }
+    else if(sementedControl.selectedSegmentIndex == POPUP_SEGMENT_NUM)
+    {
+        if (!self.popoverController)
+        {
+            
+            UIViewController *contentViewController = [[PostDetailPopContentViewController alloc] initWithStyle:UITableViewStylePlain];
+            self.popoverController = [[WEPopoverController alloc] initWithContentViewController:contentViewController];
+            self.popoverController.delegate = self;
+            self.popoverController.passthroughViews = [NSArray arrayWithObject:self.navigationController.navigationBar];
+            
+            CGRect frame = sementedControl.frame;
+            CGRect rect = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width / sementedControl.numberOfSegments, frame.size.height);
+            
+            rect.origin.x = rect.origin.x + frame.size.width / sementedControl.numberOfSegments * sementedControl.selectedSegmentIndex;
+            
+            if ([self.popoverController respondsToSelector:@selector(setContainerViewProperties:)]) {
+                [self.popoverController setContainerViewProperties:[self improvedContainerViewProperties]];
+            }
+            
+            [self.popoverController presentPopoverFromRect:rect
+                                                    inView:sementedControl
+                                  permittedArrowDirections:(UIPopoverArrowDirectionUp|UIPopoverArrowDirectionDown)
+                                                  animated:YES];
+            
+            contentViewController = nil;
+        }
+        else
+        {
+            [self.popoverController dismissPopoverAnimated:YES];
+            self.popoverController = nil;
+        }
     }
     
     sementedControl = nil;
@@ -87,7 +161,7 @@
 {
     _postDetailData = nil;
     _repliesArray = nil;
-    
+    self.popoverController = nil;
 }
 
 - (int)addNewReply:(NSString *)replayMessage
@@ -105,7 +179,6 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
     
     if ([_repliesArray count] == 0)
     {
@@ -204,6 +277,19 @@
     }
     
     return nil;
+}
+
+#pragma mark -
+#pragma mark WEPopoverControllerDelegate implementation
+
+- (void)popoverControllerDidDismissPopover:(WEPopoverController *)thePopoverController {
+	//Safe to release the popover here
+	self.popoverController = nil;
+}
+
+- (BOOL)popoverControllerShouldDismissPopover:(WEPopoverController *)thePopoverController {
+	//The popover is automatically dismissed if you click outside it, unless you return NO here
+	return YES;
 }
 
 

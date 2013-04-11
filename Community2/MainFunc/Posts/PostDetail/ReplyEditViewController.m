@@ -52,13 +52,14 @@ Boolean showFaceBoard = FALSE;
     [self.navigationItem setRightBarButtonItem:postBarBtn];
     
     postBarBtn = nil;
+    
+    [self.textView becomeFirstResponder];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    [self.textView becomeFirstResponder];
+
 }
 
 - (void)didReceiveMemoryWarning

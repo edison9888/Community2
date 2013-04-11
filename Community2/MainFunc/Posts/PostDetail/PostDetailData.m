@@ -18,7 +18,7 @@
     if (self) {
         self.postDetailDic = nil;
         self.postDetailDic = [[NSMutableDictionary alloc] init];
-        [self.postDetailDic setObject:@"Title1" forKey:@"title"];
+        [self.postDetailDic setObject:@"我是青龙使" forKey:@"title"];
         [self.postDetailDic setObject:@"zhaofeng" forKey:@"author"];
         [self.postDetailDic setObject:@"2013-03-27 16:09" forKey:@"date"];
         [self.postDetailDic setObject:@"1楼" forKey:@"floor"];

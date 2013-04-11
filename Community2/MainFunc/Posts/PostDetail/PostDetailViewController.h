@@ -10,12 +10,15 @@
 #import "PostDetailTableViewCell.h"
 #import "PostReplyTableViewCell.h"
 #import "PostDetailData.h"
+#import "WEPopoverController.h"
 
-@interface PostDetailViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface PostDetailViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, WEPopoverControllerDelegate, UIPopoverControllerDelegate>
 {
     PostDetailData *_postDetailData;
     NSMutableArray *_repliesArray;
 }
+
+@property (nonatomic, strong) WEPopoverController *popoverController;
 
 - (int)addNewReply:(NSString *)replayMessage;
 
