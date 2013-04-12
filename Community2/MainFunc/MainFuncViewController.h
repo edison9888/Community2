@@ -11,10 +11,11 @@
 #import "MainFuncPostsView.h"
 #import "MainFuncAnnouncementView.h"
 
+#import "SINavigationMenuView.h"
 
-@interface MainFuncViewController : UIViewController
+@interface MainFuncViewController : UIViewController<SINavigationMenuDelegate>
 {
-
+    SINavigationMenuView *_menu;
 }
 @property (strong, nonatomic) IBOutlet UISegmentedControl *mainFuncSegmentControl;
 @property (strong, nonatomic) IBOutlet MainFuncChatView *chatView;

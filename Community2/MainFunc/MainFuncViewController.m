@@ -39,8 +39,18 @@
     
     [self.postsView setNavigationController:self.navigationController];
     
-    self.navigationController.title = @"DarkBlood公会";
-        
+    self.navigationItem.title = @"DarkBlood";
+    
+    if (_menu == nil)
+    {
+        CGRect frame = CGRectMake(0, 0, 200, self.navigationController.navigationBar.bounds.size.height);
+        _menu = [[SINavigationMenuView alloc] initWithFrame:frame title:@"DarkBlood"];
+        [_menu displayMenuInView:self.view];
+        _menu.items = @[@"精华", @"置顶", @"吐槽", @"全部"];
+        _menu.delegate = self;
+ 
+    }
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -54,12 +64,17 @@
     
     switch (selectedIndex) {
         case 0:
+            self.navigationItem.titleView = nil;
+            self.navigationItem.title = @"DarkBlood";
             [self.view bringSubviewToFront:self.chatView];
             break;
         case 1:
+            self.navigationItem.titleView = _menu;
             [self.view bringSubviewToFront:self.postsView];
             break;
         case 2:
+            self.navigationItem.titleView = nil;
+            self.navigationItem.title = @"DarkBlood";
             [self.view bringSubviewToFront:self.announcementView];
             break;
             
@@ -79,7 +94,14 @@
     [self setChatView:nil];
     [self setPostsView:nil];
     [self setAnnouncementView:nil];
+    _menu = nil;
     [super viewDidUnload];
+}
+
+#pragma mark title menu delegate
+- (void)didSelectItemAtIndex:(NSUInteger)index
+{
+    NSLog(@"did selected item at index %d", index);
 }
 
 @end
