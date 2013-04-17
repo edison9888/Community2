@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "remindTableView.h"
+#import "FaceBoardPageControl.h"
+#import "FinishTableView.h"
 
-@interface MainFuncAnnouncementView : UIView
+@interface MainFuncAnnouncementView : UIView<UIScrollViewDelegate>
+{
+    UIScrollView         *_announcementScrollView;
+    UILabel              *_announceStatusLable;     //finished, reminded
+    UILabel              *_finishLable;
+    remindTableView      *_remindedTableView;
+    FinishTableView      *_finishedTableView;
+    FaceBoardPageControl *_facePageControl;
+    
+}
 
 @end

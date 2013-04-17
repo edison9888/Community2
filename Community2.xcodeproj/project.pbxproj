@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0D55EA171CF01A00BD93C9 /* AnnounceData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0D55E9171CF01A00BD93C9 /* AnnounceData.m */; };
+		4D0D55EE171D35CD00BD93C9 /* AddAnnounceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0D55ED171D35CD00BD93C9 /* AddAnnounceViewController.m */; };
 		4D0F091E17053B2C0063D682 /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0F091D17053B2C0063D682 /* reply.png */; };
 		4D0F0921170543460063D682 /* reply2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0F0920170543460063D682 /* reply2.png */; };
 		4D2451AF16FB303A00B84884 /* bubbleMine.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D2451AB16FB303A00B84884 /* bubbleMine.png */; };
 		4D2451B016FB303A00B84884 /* bubbleMine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D2451AC16FB303A00B84884 /* bubbleMine@2x.png */; };
 		4D2451B116FB303A00B84884 /* bubbleSomeone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D2451AD16FB303A00B84884 /* bubbleSomeone.png */; };
 		4D2451B216FB303A00B84884 /* bubbleSomeone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D2451AE16FB303A00B84884 /* bubbleSomeone@2x.png */; };
+		4D2EE1E3171BD7DF005445BF /* remindTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2EE1E2171BD7DF005445BF /* remindTableView.m */; };
+		4D2EE1EB171BDFB2005445BF /* remindCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D2EE1EA171BDFB2005445BF /* remindCell.xib */; };
+		4D372581171C289C0060D44B /* FinishTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D372580171C289C0060D44B /* FinishTableView.m */; };
+		4D372584171C28EC0060D44B /* FinishCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D372583171C28EC0060D44B /* FinishCell.xib */; };
+		4D3E9FC5171BCDD500ADD8D7 /* alarm.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3E9FC4171BCDD500ADD8D7 /* alarm.png */; };
 		4D70DEAA1717B0B200E98E44 /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D70DEA61717B0B200E98E44 /* arrow_down.png */; };
 		4D70DEAB1717B0B200E98E44 /* arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D70DEA71717B0B200E98E44 /* arrow_down@2x.png */; };
 		4D70DEAC1717B0B200E98E44 /* arrow_down1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D70DEA81717B0B200E98E44 /* arrow_down1.png */; };
@@ -272,12 +279,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D0D55E8171CF01A00BD93C9 /* AnnounceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnnounceData.h; path = MainFunc/Announcement/AnnounceData.h; sourceTree = "<group>"; };
+		4D0D55E9171CF01A00BD93C9 /* AnnounceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnnounceData.m; path = MainFunc/Announcement/AnnounceData.m; sourceTree = "<group>"; };
+		4D0D55EC171D35CD00BD93C9 /* AddAnnounceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddAnnounceViewController.h; path = MainFunc/Announcement/AddAnnounceViewController.h; sourceTree = "<group>"; };
+		4D0D55ED171D35CD00BD93C9 /* AddAnnounceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddAnnounceViewController.m; path = MainFunc/Announcement/AddAnnounceViewController.m; sourceTree = "<group>"; };
 		4D0F091D17053B2C0063D682 /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply.png; sourceTree = "<group>"; };
 		4D0F0920170543460063D682 /* reply2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply2.png; sourceTree = "<group>"; };
 		4D2451AB16FB303A00B84884 /* bubbleMine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubbleMine.png; path = MainFunc/Chat/bubble/images/bubbleMine.png; sourceTree = "<group>"; };
 		4D2451AC16FB303A00B84884 /* bubbleMine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bubbleMine@2x.png"; path = "MainFunc/Chat/bubble/images/bubbleMine@2x.png"; sourceTree = "<group>"; };
 		4D2451AD16FB303A00B84884 /* bubbleSomeone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubbleSomeone.png; path = MainFunc/Chat/bubble/images/bubbleSomeone.png; sourceTree = "<group>"; };
 		4D2451AE16FB303A00B84884 /* bubbleSomeone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bubbleSomeone@2x.png"; path = "MainFunc/Chat/bubble/images/bubbleSomeone@2x.png"; sourceTree = "<group>"; };
+		4D2EE1E1171BD7DF005445BF /* remindTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = remindTableView.h; path = MainFunc/Announcement/remindTableView.h; sourceTree = "<group>"; };
+		4D2EE1E2171BD7DF005445BF /* remindTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = remindTableView.m; path = MainFunc/Announcement/remindTableView.m; sourceTree = "<group>"; };
+		4D2EE1EA171BDFB2005445BF /* remindCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = remindCell.xib; path = MainFunc/Announcement/remindCell.xib; sourceTree = "<group>"; };
+		4D37257F171C289C0060D44B /* FinishTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinishTableView.h; path = MainFunc/Announcement/FinishTableView.h; sourceTree = "<group>"; };
+		4D372580171C289C0060D44B /* FinishTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinishTableView.m; path = MainFunc/Announcement/FinishTableView.m; sourceTree = "<group>"; };
+		4D372583171C28EC0060D44B /* FinishCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FinishCell.xib; path = MainFunc/Announcement/FinishCell.xib; sourceTree = "<group>"; };
+		4D3E9FC4171BCDD500ADD8D7 /* alarm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = alarm.png; path = MainFunc/Announcement/images/alarm.png; sourceTree = "<group>"; };
 		4D70DE971717B09C00E98E44 /* SICellSelection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SICellSelection.h; path = MainFunc/Posts/NavigationMenuView/SICellSelection.h; sourceTree = "<group>"; };
 		4D70DE981717B09C00E98E44 /* SICellSelection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SICellSelection.m; path = MainFunc/Posts/NavigationMenuView/SICellSelection.m; sourceTree = "<group>"; };
 		4D70DE991717B09C00E98E44 /* SIMenuButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SIMenuButton.h; path = MainFunc/Posts/NavigationMenuView/SIMenuButton.h; sourceTree = "<group>"; };
@@ -613,6 +631,14 @@
 			name = imgs;
 			sourceTree = "<group>";
 		};
+		4D3E9FC3171BCDC600ADD8D7 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				4D3E9FC4171BCDD500ADD8D7 /* alarm.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		4D70DE951717B07A00E98E44 /* NavigationMenuView */ = {
 			isa = PBXGroup;
 			children = (
@@ -785,8 +811,19 @@
 		4D9A2ACE16F17A34005957E4 /* Announcement */ = {
 			isa = PBXGroup;
 			children = (
+				4D3E9FC3171BCDC600ADD8D7 /* images */,
 				4D9A2ACF16F17C89005957E4 /* MainFuncAnnouncementView.h */,
 				4D9A2AD016F17C89005957E4 /* MainFuncAnnouncementView.m */,
+				4D2EE1E1171BD7DF005445BF /* remindTableView.h */,
+				4D2EE1E2171BD7DF005445BF /* remindTableView.m */,
+				4D2EE1EA171BDFB2005445BF /* remindCell.xib */,
+				4D37257F171C289C0060D44B /* FinishTableView.h */,
+				4D372580171C289C0060D44B /* FinishTableView.m */,
+				4D372583171C28EC0060D44B /* FinishCell.xib */,
+				4D0D55E8171CF01A00BD93C9 /* AnnounceData.h */,
+				4D0D55E9171CF01A00BD93C9 /* AnnounceData.m */,
+				4D0D55EC171D35CD00BD93C9 /* AddAnnounceViewController.h */,
+				4D0D55ED171D35CD00BD93C9 /* AddAnnounceViewController.m */,
 			);
 			name = Announcement;
 			sourceTree = "<group>";
@@ -1384,6 +1421,9 @@
 				4D70DEAB1717B0B200E98E44 /* arrow_down@2x.png in Resources */,
 				4D70DEAC1717B0B200E98E44 /* arrow_down1.png in Resources */,
 				4D70DEAD1717B0B200E98E44 /* arrow_down1@2x.png in Resources */,
+				4D3E9FC5171BCDD500ADD8D7 /* alarm.png in Resources */,
+				4D2EE1EB171BDFB2005445BF /* remindCell.xib in Resources */,
+				4D372584171C28EC0060D44B /* FinishCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1433,6 +1473,10 @@
 				4DC785401713B5C800E3D98C /* FaceButton.m in Sources */,
 				4DC786AB1713C25C00E3D98C /* RichTextView.m in Sources */,
 				4DAF9CCC1716670A00659EB4 /* PostDetailPopContentViewController.m in Sources */,
+				4D2EE1E3171BD7DF005445BF /* remindTableView.m in Sources */,
+				4D372581171C289C0060D44B /* FinishTableView.m in Sources */,
+				4D0D55EA171CF01A00BD93C9 /* AnnounceData.m in Sources */,
+				4D0D55EE171D35CD00BD93C9 /* AddAnnounceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

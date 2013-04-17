@@ -7,6 +7,7 @@
 //
 
 #import "MainFuncViewController.h"
+#import "AddAnnounceViewController.h"
 
 
 @interface MainFuncViewController ()
@@ -64,18 +65,29 @@
     
     switch (selectedIndex) {
         case 0:
+        {
             self.navigationItem.titleView = nil;
             self.navigationItem.title = @"DarkBlood";
             [self.view bringSubviewToFront:self.chatView];
+            self.navigationItem.rightBarButtonItem = nil;
+        }
             break;
         case 1:
+        {
             self.navigationItem.titleView = _menu;
             [self.view bringSubviewToFront:self.postsView];
+            self.navigationItem.rightBarButtonItem = nil;
+        }
             break;
         case 2:
+        {
             self.navigationItem.titleView = nil;
             self.navigationItem.title = @"DarkBlood";
             [self.view bringSubviewToFront:self.announcementView];
+            UIBarButtonItem *addAnnouceItem = [[UIBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(clickAddAnnouceItem)];
+            self.navigationItem.rightBarButtonItem = addAnnouceItem;
+            addAnnouceItem = nil;
+        }
             break;
             
         default:
@@ -96,6 +108,15 @@
     [self setAnnouncementView:nil];
     _menu = nil;
     [super viewDidUnload];
+}
+
+#pragma mark button action
+- (void)clickAddAnnouceItem
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    AddAnnounceViewController *addAnnounceViewController = [storyboard instantiateViewControllerWithIdentifier:@"AddAnnounceView"];
+
+    [self.navigationController pushViewController:addAnnounceViewController animated:YES];
 }
 
 #pragma mark title menu delegate
