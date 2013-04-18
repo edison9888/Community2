@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "DrawAnnounceView.h"
 
 @interface AddAnnounceViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) IBOutlet UITextField *titleTextField;
 @property (nonatomic, strong) IBOutlet UITextView *contentTextView;
 @property (nonatomic, strong) IBOutlet UITableView *settingTableView;
+@property (nonatomic, strong) IBOutlet UILabel     *contentLabel;
+@property (nonatomic, strong) UITableViewCell *advancedTimeCell;
+
+@property (nonatomic, strong) DrawAnnounceView *drawAnnounceView;
 
 @end

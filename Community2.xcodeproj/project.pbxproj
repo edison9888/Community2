@@ -11,6 +11,7 @@
 		4D0D55EE171D35CD00BD93C9 /* AddAnnounceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0D55ED171D35CD00BD93C9 /* AddAnnounceViewController.m */; };
 		4D0F091E17053B2C0063D682 /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0F091D17053B2C0063D682 /* reply.png */; };
 		4D0F0921170543460063D682 /* reply2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0F0920170543460063D682 /* reply2.png */; };
+		4D1126AB171E721F00F202B8 /* DrawAnnounceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1126AA171E721F00F202B8 /* DrawAnnounceView.m */; };
 		4D2451AF16FB303A00B84884 /* bubbleMine.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D2451AB16FB303A00B84884 /* bubbleMine.png */; };
 		4D2451B016FB303A00B84884 /* bubbleMine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D2451AC16FB303A00B84884 /* bubbleMine@2x.png */; };
 		4D2451B116FB303A00B84884 /* bubbleSomeone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D2451AD16FB303A00B84884 /* bubbleSomeone.png */; };
@@ -285,6 +286,8 @@
 		4D0D55ED171D35CD00BD93C9 /* AddAnnounceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddAnnounceViewController.m; path = MainFunc/Announcement/AddAnnounceViewController.m; sourceTree = "<group>"; };
 		4D0F091D17053B2C0063D682 /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply.png; sourceTree = "<group>"; };
 		4D0F0920170543460063D682 /* reply2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply2.png; sourceTree = "<group>"; };
+		4D1126A9171E721F00F202B8 /* DrawAnnounceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawAnnounceView.h; path = MainFunc/Announcement/DrawAnnounceView.h; sourceTree = "<group>"; };
+		4D1126AA171E721F00F202B8 /* DrawAnnounceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DrawAnnounceView.m; path = MainFunc/Announcement/DrawAnnounceView.m; sourceTree = "<group>"; };
 		4D2451AB16FB303A00B84884 /* bubbleMine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubbleMine.png; path = MainFunc/Chat/bubble/images/bubbleMine.png; sourceTree = "<group>"; };
 		4D2451AC16FB303A00B84884 /* bubbleMine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bubbleMine@2x.png"; path = "MainFunc/Chat/bubble/images/bubbleMine@2x.png"; sourceTree = "<group>"; };
 		4D2451AD16FB303A00B84884 /* bubbleSomeone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubbleSomeone.png; path = MainFunc/Chat/bubble/images/bubbleSomeone.png; sourceTree = "<group>"; };
@@ -824,6 +827,8 @@
 				4D0D55E9171CF01A00BD93C9 /* AnnounceData.m */,
 				4D0D55EC171D35CD00BD93C9 /* AddAnnounceViewController.h */,
 				4D0D55ED171D35CD00BD93C9 /* AddAnnounceViewController.m */,
+				4D1126A9171E721F00F202B8 /* DrawAnnounceView.h */,
+				4D1126AA171E721F00F202B8 /* DrawAnnounceView.m */,
 			);
 			name = Announcement;
 			sourceTree = "<group>";
@@ -1477,6 +1482,7 @@
 				4D372581171C289C0060D44B /* FinishTableView.m in Sources */,
 				4D0D55EA171CF01A00BD93C9 /* AnnounceData.m in Sources */,
 				4D0D55EE171D35CD00BD93C9 /* AddAnnounceViewController.m in Sources */,
+				4D1126AB171E721F00F202B8 /* DrawAnnounceView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
