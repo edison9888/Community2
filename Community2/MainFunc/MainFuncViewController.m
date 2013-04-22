@@ -115,6 +115,8 @@
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     AddAnnounceViewController *addAnnounceViewController = [storyboard instantiateViewControllerWithIdentifier:@"AddAnnounceView"];
+    
+    [addAnnounceViewController setAnnounceView:self.announcementView];
 
     [self.navigationController pushViewController:addAnnounceViewController animated:YES];
 }

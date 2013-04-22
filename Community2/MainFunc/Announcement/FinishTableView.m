@@ -88,6 +88,8 @@
     cell.textLabel.text = ((AnnounceData *)[self.finishedAnnounceArray objectAtIndex:indexPath.row]).title;
     cell.detailTextLabel.text = ((AnnounceData *)[self.finishedAnnounceArray objectAtIndex:indexPath.row]).date;
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     
     // Set up the cell...
     

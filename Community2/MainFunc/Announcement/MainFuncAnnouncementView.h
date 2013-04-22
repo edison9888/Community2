@@ -10,6 +10,7 @@
 #import "remindTableView.h"
 #import "FaceBoardPageControl.h"
 #import "FinishTableView.h"
+#import "AnnounceData.h"
 
 @interface MainFuncAnnouncementView : UIView<UIScrollViewDelegate>
 {
@@ -19,7 +20,10 @@
     remindTableView      *_remindedTableView;
     FinishTableView      *_finishedTableView;
     FaceBoardPageControl *_facePageControl;
-    
 }
+
+@property (nonatomic, strong) remindTableView *remindedTableView;
+
+- (void)addNewAnnounce:(AnnounceData *)newAnnounceData;
 
 @end

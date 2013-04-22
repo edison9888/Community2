@@ -15,6 +15,8 @@
 
 @implementation MainFuncAnnouncementView
 
+@synthesize remindedTableView;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -105,6 +107,11 @@
     _remindedTableView = nil;
     _finishLable = nil;
     _facePageControl = nil;
+}
+
+- (void)addNewAnnounce:(AnnounceData *)newAnnounceData
+{
+    [_remindedTableView addNewAnnounceData:newAnnounceData];
 }
 
 

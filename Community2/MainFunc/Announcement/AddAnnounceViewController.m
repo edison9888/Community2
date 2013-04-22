@@ -7,6 +7,8 @@
 //
 
 #import "AddAnnounceViewController.h"
+#import "AnnounceData.h"
+
 
 @interface AddAnnounceViewController ()
 
@@ -14,7 +16,8 @@
 
 @implementation AddAnnounceViewController
 
-@synthesize titleTextField, settingTableView, contentTextView, drawAnnounceView, advancedTimeCell, contentLabel;
+@synthesize titleTextField, settingTableView, contentTextView, drawAnnounceView, advancedTimeCell, contentLabel,
+            beforeTimePicker, datePicker, beforeTimeSourceArray, dateLabel, beforeTimeLabel, date, aheadOfAlarm, isNeedAlarm, guildName, announceView;
 
 NSTimeInterval tmpAnimationDuration = 0.3;
 CGRect         tmpFrame;
@@ -60,6 +63,15 @@ int            tmpI = 3;
     tmpFrame = self.view.frame;
     tmpFrame.origin.y -= 20;
     tmpFrame.size.height -= 44;
+    
+    self.beforeTimeSourceArray = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    for (int i = 0; i < 10; i++) {
+        
+        NSString *tmpString = [NSString stringWithFormat:@"%d min  ", i * 10];
+        [self.beforeTimeSourceArray addObject:tmpString];
+        tmpString = nil;
+    }
   
 //  delete the draw line for not success
 //    NSMutableDictionary *tmpDic = [[NSMutableDictionary alloc] init];
@@ -99,7 +111,21 @@ int            tmpI = 3;
     self.contentTextView = nil;
     self.advancedTimeCell = nil;
     self.contentLabel = nil;
+    self.beforeTimeSourceArray = nil;
+    self.beforeTimePicker = nil;
+    self.datePicker = nil;
+    self.dateLabel = nil;
+    self.beforeTimeLabel = nil;
+    self.date = nil;
+    self.guildName = nil;
+    self.announceView = nil;
+    
     [super viewDidUnload];
+}
+
+- (void)setAnnounceViewId:(id)tmpAnnounceView
+{
+    self.announceView = tmpAnnounceView;
 }
 
 
@@ -134,6 +160,58 @@ int            tmpI = 3;
     
 }
 
+#pragma mark -
+#pragma mark ActionSheet delegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    switch (actionSheet.tag) {
+        case 51:
+        {
+            NSDate *selectDate = self.datePicker.date;
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd   EEEE   a HH:mm"];
+            self.dateLabel.text = [dateFormatter stringFromDate:selectDate];
+            dateFormatter = nil;
+            
+        }
+            break;
+            
+        case 52:
+        {
+            NSInteger seletedNum = [self.beforeTimePicker selectedRowInComponent:0];
+            self.beforeTimeLabel.text = [self.beforeTimeSourceArray objectAtIndex:seletedNum];
+            self.aheadOfAlarm = seletedNum * 10;
+            
+        }
+            
+        default:
+        {
+
+        }
+            break;
+    }
+    
+}
+#pragma mark -
+#pragma mark Picker Data Source Methods
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return (1);
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return [self.beforeTimeSourceArray count];
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView
+             titleForRow:(NSInteger)row
+            forComponent:(NSInteger)component
+{
+    return [self.beforeTimeSourceArray objectAtIndex:row];
+}
+
 #pragma mark Table view methods
 
 - (void)tableView:(UITableView *)tv didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -148,6 +226,58 @@ int            tmpI = 3;
     {
         [tv deselectRowAtIndexPath:indexPath animated:NO];
         [self textViewResign];
+    }
+    else
+    {
+        switch (indexPath.row)
+        {
+            case 0:
+                break;
+            case 1:
+            {
+                NSString *title = UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation) ? @"\n\n\n\n\n\n\n\n\n" : @"\n\n\n\n\n\n\n\n\n\n\n";
+                UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"完成", nil];
+                actionSheet.tag = 51;
+                [actionSheet showInView:self.view.window];
+                
+                NSDate *curDate = [NSDate date];
+                self.datePicker = [[UIDatePicker alloc] init];
+                datePicker.datePickerMode = UIDatePickerModeDateAndTime;
+                NSDate *maxDate = [[NSDate alloc] initWithTimeIntervalSinceNow:10 * 365 * 24 * 60 * 60];
+                
+                datePicker.minimumDate = curDate;
+                datePicker.maximumDate = maxDate;
+                [datePicker setDate:curDate animated:YES];
+                self.datePicker.tag = 101;
+                
+                [actionSheet addSubview:self.datePicker];
+                actionSheet = nil;
+                
+            }
+                break;
+                
+            case 2:
+            {
+                NSString *title = UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation) ? @"\n\n\n\n\n\n\n\n\n" : @"\n\n\n\n\n\n\n\n\n\n\n";
+                UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"完成", nil];
+                actionSheet.tag = 52;
+                [actionSheet showInView:self.view.window];
+                
+                self.beforeTimePicker = [[UIPickerView alloc] init];
+                self.beforeTimePicker.delegate = self;
+                self.beforeTimePicker.dataSource = self;
+                self.beforeTimePicker.showsSelectionIndicator = YES;
+                self.beforeTimePicker.tag = 102;
+                [self.beforeTimePicker selectRow:1 inComponent:0 animated:NO];
+                
+                [actionSheet addSubview:self.beforeTimePicker];
+                actionSheet = nil;
+            }
+                break;
+            default:
+                break;
+                
+        }
     }
 }
 
@@ -197,11 +327,18 @@ int            tmpI = 3;
         case 1:
         {
             UILabel *tmpLabel = [[UILabel alloc] init];
-            tmpLabel.text = @"2013年04月17日 星期三 下午18:00";
+            
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd   EEEE   a HH:mm"];
+            tmpLabel.text = [dateFormatter stringFromDate:[NSDate date]];
+            
+//            tmpLabel.text = @"2013年04月17日 星期三 下午18:00";
             tmpLabel.frame = CGRectMake(0, 0, 280, 43);
             tmpLabel.textAlignment = UITextAlignmentCenter;
+            self.dateLabel = tmpLabel;
             [cell addSubview:tmpLabel];
             tmpLabel = nil;
+            dateFormatter = nil;
         }
             break;
             
@@ -209,14 +346,15 @@ int            tmpI = 3;
         {
             UILabel *tmpLabel = [[UILabel alloc] init];
             tmpLabel.text = @"提前时间";
-            tmpLabel.frame = CGRectMake(0, 0, 140, 43);
+            tmpLabel.frame = CGRectMake(12, 0, 140, 43);
             [cell addSubview:tmpLabel];
             tmpLabel = nil;
             
             UILabel *timeLabel = [[UILabel alloc] init];
             timeLabel.text = @"10 min  ";
-            timeLabel.frame = CGRectMake(140, 0, 140, 43);
+            timeLabel.frame = CGRectMake(140, 0, 135, 43);
             timeLabel.textAlignment = UITextAlignmentRight;
+            self.beforeTimeLabel = timeLabel;
             [cell addSubview:timeLabel];
             timeLabel = nil;
             
@@ -238,7 +376,21 @@ int            tmpI = 3;
 #pragma mark Button event
 - (void)clickAddAnnounce
 {
+    NSString *tmpDate = self.dateLabel.text;
+    NSString *tmpTitle = self.titleTextField.text;
+    NSInteger tmpAheadOfAlarm = self.aheadOfAlarm;
+    NSString *tmpContent = self.contentTextView.text;
+    NSInteger tmpIsAlarmed = self.isNeedAlarm;
+    
+    AnnounceData *newData = [[AnnounceData alloc] initWithData:tmpDate title:tmpTitle aheadOfAlarm:tmpAheadOfAlarm content:tmpContent isNeedAlarm:tmpIsAlarmed isFinished:0 isExpired:0 guildName:@"随便"];
+    
+    [self.announceView addNewAnnounce:newData];
+    
     [self.navigationController popViewControllerAnimated:YES];
+    
+    tmpDate = nil;
+    tmpTitle = nil;
+    tmpContent = nil;
 }
 
 - (void)clickCancelAnnounce
@@ -252,10 +404,6 @@ int            tmpI = 3;
     UISwitch *tmpSwitcher = (UISwitch *)sender;
     if (!tmpSwitcher.isOn)
     {
-//        tmpI = 2;
-//        [self.settingTableView beginUpdates];
-//        [self.settingTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:tmpIndex] withRowAnimation:YES];
-//        [self.settingTableView endUpdates];
         
         [UIView animateWithDuration:tmpAnimationDuration
                          animations:^{
@@ -275,6 +423,7 @@ int            tmpI = 3;
                          completion:^(BOOL finished) {
                              
                          }];
+        self.isNeedAlarm = 0;
     }
     else
     {
@@ -299,6 +448,7 @@ int            tmpI = 3;
                          completion:^(BOOL finished) {
                              
                          }];
+        self.isNeedAlarm = 1;
     }
     
 }

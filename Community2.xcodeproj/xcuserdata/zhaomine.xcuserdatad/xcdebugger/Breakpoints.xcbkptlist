@@ -788,11 +788,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Community2/MainFunc/Announcement/remindTableView.m"
-         timestampString = "387706384.487936"
+         timestampString = "388057168.510176"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "76"
-         endingLineNumber = "76"
+         startingLineNumber = "83"
+         endingLineNumber = "83"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -801,11 +801,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Community2/MainFunc/Announcement/AddAnnounceViewController.m"
-         timestampString = "387960821.096818"
+         timestampString = "388057168.510176"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "184"
-         endingLineNumber = "184"
+         startingLineNumber = "314"
+         endingLineNumber = "314"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -814,11 +814,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Community2/MainFunc/Announcement/AddAnnounceViewController.m"
-         timestampString = "387957457.916048"
+         timestampString = "388057168.510176"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "38"
-         endingLineNumber = "38"
+         startingLineNumber = "41"
+         endingLineNumber = "41"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -840,11 +840,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Community2/MainFunc/Announcement/AddAnnounceViewController.m"
-         timestampString = "387960821.096818"
+         timestampString = "388057168.510176"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "252"
-         endingLineNumber = "252"
+         startingLineNumber = "404"
+         endingLineNumber = "404"
          landmarkName = "-switchAlarmSetting:"
          landmarkType = "5">
       </FileBreakpoint>

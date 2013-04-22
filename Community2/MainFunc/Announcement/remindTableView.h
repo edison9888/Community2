@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AnnounceData.h"
 
 @interface remindTableView : UITableView <UITableViewDelegate, UITableViewDataSource>
 {
@@ -18,5 +19,7 @@
 }
 
 -(void) secondInit;
+
+- (void)addNewAnnounceData:(AnnounceData *)newAnnounceData;
 
 @end

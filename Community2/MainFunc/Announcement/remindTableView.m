@@ -48,6 +48,13 @@
 
 }
 
+- (void)addNewAnnounceData:(AnnounceData *)newAnnounceData
+{
+    [_remindTitleArray addObject:newAnnounceData.title];
+    [_remindTimeArray addObject:newAnnounceData.date];
+    [self reloadData];
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -66,7 +73,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return [_remindTitleArray count];
 }
 
 
@@ -91,8 +98,7 @@
     
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     
-    
-
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     // Set up the cell...
 
