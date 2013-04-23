@@ -389,6 +389,11 @@
                                     <segment title=""/>
                                 </segments>
                             </segmentedControl>
+                            <view contentMode="scaleToFill" id="Mjg-Kh-k9D" customClass="MainFuncAnnouncementView">
+                                <rect key="frame" x="0.0" y="44" width="320" height="461"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" id="Stp-1a-IdG" customClass="MainFuncPostsView">
                                 <rect key="frame" x="0.0" y="44" width="320" height="461"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -397,11 +402,6 @@
                             <view tag="381" contentMode="scaleToFill" id="yhc-hc-XLT" customClass="MainFuncChatView">
                                 <rect key="frame" x="0.0" y="44" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" id="Mjg-Kh-k9D" customClass="MainFuncAnnouncementView">
-                                <rect key="frame" x="0.0" y="44" width="320" height="461"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>

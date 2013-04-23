@@ -71,6 +71,7 @@
     
     _remindedTableView = [[remindTableView alloc] initWithFrame:CGRectMake(20, 66, 280, 250) style:UITableViewStyleGrouped];
     [_remindedTableView secondInit];
+    _remindedTableView.secondDelegate = self;
     
     [_announcementScrollView addSubview:_remindedTableView];
     
@@ -87,11 +88,9 @@
                forControlEvents:UIControlEventValueChanged];
     _facePageControl.numberOfPages = 2;
     _facePageControl.currentPage = 0;
-    
-    
+        
     [self addSubview:_facePageControl];
 
-    
     return self;
 }
 
@@ -134,5 +133,13 @@
     // Drawing code
 }
 */
+
+#pragma mark -
+#pragma mark AnnounceFinishDeleage
+- (void)completeNewAnnounce:(AnnounceData *)data
+{
+    [_finishedTableView addNewData:data];
+    [_finishedTableView reloadData];
+}
 
 @end

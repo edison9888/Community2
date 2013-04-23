@@ -35,7 +35,7 @@ int            tmpI2 = 3;
     return self;
 }
 
-- (void)selfInitWithData:(AnnounceData *)data
+- (void)selfInitWithData:(AnnounceData *)data isFinishDetail:(BOOL)isFinishDetail
 {
     self.detailData = data;
     self.annDate = data.date;
@@ -50,6 +50,7 @@ int            tmpI2 = 3;
     {
         tmpI2 = 2;
     }
+    self.isFinishDetail = isFinishDetail;
 }
 
 - (void)viewDidLoad
@@ -86,9 +87,18 @@ int            tmpI2 = 3;
     self.titleTextField.text = self.annTitle;
     self.contentTextView.text = self.annContent;
     
-    UIBarButtonItem *addAnnounceBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(clickSaveAnnounce)];
-    self.navigationItem.rightBarButtonItem = addAnnounceBtnItem;
-    addAnnounceBtnItem = nil;
+    if (self.isFinishDetail)
+    {
+        self.finishBtn.alpha = 0;
+        [self.titleTextField setEnabled:NO];
+        [self.contentTextView setEditable:NO];
+    }
+    else
+    {
+        UIBarButtonItem *addAnnounceBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(clickSaveAnnounce)];
+        self.navigationItem.rightBarButtonItem = addAnnounceBtnItem;
+        addAnnounceBtnItem = nil;
+    }
     
 }
 
@@ -207,7 +217,10 @@ int            tmpI2 = 3;
 
 - (void)tableView:(UITableView *)tv didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if (self.isFinishDetail)
+    {
+        return;
+    }
     if ([self.titleTextField isFirstResponder])
     {
         [tv deselectRowAtIndexPath:indexPath animated:NO];
@@ -307,6 +320,10 @@ int            tmpI2 = 3;
             UISwitch *tmpSwitch = [[UISwitch alloc] init];
             tmpSwitch.frame = CGRectMake(203, 8, 79, 27);
             tmpSwitch.on = self.isNeedAlarm;
+            if (self.isFinishDetail)
+            {
+                [tmpSwitch setEnabled:NO];
+            }
             [cell addSubview:tmpSwitch];
             [tmpSwitch addTarget:self action:@selector(switchAlarmSetting:) forControlEvents:UIControlEventValueChanged];
             [cell addSubview:tmpSwitch];

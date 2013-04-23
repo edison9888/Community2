@@ -18,6 +18,12 @@
 
 @end
 
+@protocol AnnounceFinishDeleage <NSObject>
+
+- (void)completeNewAnnounce:(AnnounceData *)data;
+
+@end
+
 @interface remindTableView : UITableView <UITableViewDelegate, UITableViewDataSource, AnnounceDetailDelegate>
 {
     NSMutableArray *_remindTitleArray;
@@ -31,8 +37,9 @@
 }
 
 @property (nonatomic, strong) NSMutableArray *neededAnnounceArray;
+@property (nonatomic, weak) id<AnnounceFinishDeleage> secondDelegate;
 
--(void) secondInit;
+- (void)secondInit;
 
 - (void)addNewAnnounceData:(AnnounceData *)newAnnounceData;
 

@@ -42,13 +42,15 @@
 @property (nonatomic, strong) NSString *annTitle;
 @property (nonatomic, strong) NSString *annContent;
 
+@property (nonatomic, assign) BOOL isFinishDetail;
+
 @property (nonatomic, weak) id<AnnounceDetailDelegate> delegate;
 @property (nonatomic, strong) AnnounceData *detailData;
 
 - (IBAction)clickFinishBtn:(id)sender;
 - (IBAction)clickDeleteBtn:(id)sender;
 
-- (void)selfInitWithData:(AnnounceData *)data;
+- (void)selfInitWithData:(AnnounceData *)data isFinishDetail:(BOOL)isFinishDetail;
 
 
 @end

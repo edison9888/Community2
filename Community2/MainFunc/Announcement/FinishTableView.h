@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "AnnounceDetailViewController.h"
 
-@interface FinishTableView : UITableView<UITableViewDelegate, UITableViewDataSource>
+@interface FinishTableView : UITableView<UITableViewDelegate, UITableViewDataSource, AnnounceDetailDelegate>
 {
     UINavigationController *_navigationController;
+    NSInteger _detailInteger;
 }
 
 @property (nonatomic, strong) NSMutableArray *finishedAnnounceArray;
@@ -19,5 +20,6 @@
 
 - (void)secondInit;
 - (void)setNavigationController:(UINavigationController *)naviCtler;
+- (void)addNewData:(AnnounceData *)newData;
 
 @end

@@ -139,7 +139,7 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     AnnounceDetailViewController *announceDetailViewController = [storyboard instantiateViewControllerWithIdentifier:@"AnnounceDetailView"];
-    [announceDetailViewController selfInitWithData:[self.neededAnnounceArray objectAtIndex:indexPath.row]];
+    [announceDetailViewController selfInitWithData:[self.neededAnnounceArray objectAtIndex:indexPath.row] isFinishDetail:NO];
     announceDetailViewController.delegate = self;
     _detailInteger = indexPath.row;
     
@@ -166,6 +166,7 @@
 {
     AnnounceData *tmpData = [self.neededAnnounceArray objectAtIndex:_detailInteger];
     [self.neededAnnounceArray removeObjectAtIndex:_detailInteger];
+    [self.secondDelegate completeNewAnnounce:tmpData];
     
     _detailInteger = -1;
     [self reloadData];

@@ -12,7 +12,7 @@
 #import "FinishTableView.h"
 #import "AnnounceData.h"
 
-@interface MainFuncAnnouncementView : UIView<UIScrollViewDelegate>
+@interface MainFuncAnnouncementView : UIView<UIScrollViewDelegate, AnnounceFinishDeleage>
 {
     UIScrollView         *_announcementScrollView;
     UILabel              *_announceStatusLable;     //finished, reminded

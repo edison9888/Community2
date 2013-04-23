@@ -50,6 +50,11 @@
     
 }
 
+- (void)addNewData:(AnnounceData *)newData
+{
+    [self.finishedAnnounceArray addObject:newData];
+}
+
 -(void)dealloc
 {
     finishedAnnounceArray = nil;
@@ -74,7 +79,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return [self.finishedAnnounceArray count];
 }
 
 
@@ -108,9 +113,33 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     AnnounceDetailViewController *announceDetailViewController = [storyboard instantiateViewControllerWithIdentifier:@"AnnounceDetailView"];
     
+    [announceDetailViewController selfInitWithData:[self.finishedAnnounceArray objectAtIndex:indexPath.row] isFinishDetail:YES];
+    announceDetailViewController.delegate = self;
+    _detailInteger = indexPath.row;
+    
     // ...
     // Pass the selected object to the new view controller.
     [_navigationController pushViewController:announceDetailViewController animated:YES];
+}
+
+#pragma mark -
+#pragma mark Table view methods
+- (void)announceDelete
+{
+    NSLog(@"delete finished announce\n ");
+    [self.finishedAnnounceArray removeObjectAtIndex:_detailInteger];
+    _detailInteger = -1;
+    [self reloadData];
+}
+
+- (void)announceUpdate:(AnnounceData *)updateData
+{
+    NSLog(@"update finished announce\n do nothing!");
+}
+
+- (void)announceFinish
+{
+    NSLog(@"finish finished announce\n do nothing!");
 }
 
 @end
