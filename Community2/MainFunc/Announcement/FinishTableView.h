@@ -7,15 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AnnounceDetailViewController.h"
 
 @interface FinishTableView : UITableView<UITableViewDelegate, UITableViewDataSource>
 {
-
+    UINavigationController *_navigationController;
 }
 
 @property (nonatomic, strong) NSMutableArray *finishedAnnounceArray;
 @property (nonatomic, strong) NSMutableArray *timeSortArrayArray;
 
 - (void)secondInit;
+- (void)setNavigationController:(UINavigationController *)naviCtler;
 
 @end

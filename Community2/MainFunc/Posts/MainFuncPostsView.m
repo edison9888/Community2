@@ -22,8 +22,6 @@
 - (void)setNavigationController:(UINavigationController *)naviCtler
 {
     _navigationController = naviCtler;
-    
-    
 }
 
 - (id)initWithFrame:(CGRect)frame

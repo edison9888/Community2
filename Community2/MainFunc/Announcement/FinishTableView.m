@@ -13,6 +13,11 @@
 
 @synthesize finishedAnnounceArray, timeSortArrayArray;
 
+- (void)setNavigationController:(UINavigationController *)naviCtler
+{
+    _navigationController = naviCtler;
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -94,6 +99,18 @@
     // Set up the cell...
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Navigation logic may go here. Create and push another view controller.
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    AnnounceDetailViewController *announceDetailViewController = [storyboard instantiateViewControllerWithIdentifier:@"AnnounceDetailView"];
+    
+    // ...
+    // Pass the selected object to the new view controller.
+    [_navigationController pushViewController:announceDetailViewController animated:YES];
 }
 
 @end

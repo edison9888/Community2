@@ -20,10 +20,14 @@
     remindTableView      *_remindedTableView;
     FinishTableView      *_finishedTableView;
     FaceBoardPageControl *_facePageControl;
+    
+    UINavigationController *_navigationController;
 }
 
 @property (nonatomic, strong) remindTableView *remindedTableView;
 
 - (void)addNewAnnounce:(AnnounceData *)newAnnounceData;
+
+- (void)setNavigationController:(UINavigationController *)naviCtler;
 
 @end

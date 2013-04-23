@@ -87,6 +87,7 @@
             UIBarButtonItem *addAnnouceItem = [[UIBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(clickAddAnnouceItem)];
             self.navigationItem.rightBarButtonItem = addAnnouceItem;
             addAnnouceItem = nil;
+            [self.announcementView setNavigationController:self.navigationController];
         }
             break;
             

@@ -17,6 +17,14 @@
 
 @synthesize remindedTableView;
 
+- (void)setNavigationController:(UINavigationController *)naviCtler
+{
+    _navigationController = naviCtler;
+    
+    [_remindedTableView setNavigationController:_navigationController];
+    [_finishedTableView setNavigationController:_navigationController];
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -107,6 +115,8 @@
     _remindedTableView = nil;
     _finishLable = nil;
     _facePageControl = nil;
+    _navigationController = nil;
+
 }
 
 - (void)addNewAnnounce:(AnnounceData *)newAnnounceData

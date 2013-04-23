@@ -8,18 +8,34 @@
 
 #import <UIKit/UIKit.h>
 #import "AnnounceData.h"
+#import "AnnounceDetailViewController.h"
 
-@interface remindTableView : UITableView <UITableViewDelegate, UITableViewDataSource>
+@protocol AnnounceDetailDelegate <NSObject>
+
+- (void)announceDelete;
+- (void)announceUpdate:(AnnounceData *)updateData;
+- (void)announceFinish;
+
+@end
+
+@interface remindTableView : UITableView <UITableViewDelegate, UITableViewDataSource, AnnounceDetailDelegate>
 {
     NSMutableArray *_remindTitleArray;
     NSMutableArray *_remindTimeArray;
     NSMutableArray *_isAlarmArray;
     
     IBOutlet UITableViewCell *_remindTableCell;
+    UINavigationController *_navigationController;
+    
+    NSInteger _detailInteger;
 }
+
+@property (nonatomic, strong) NSMutableArray *neededAnnounceArray;
 
 -(void) secondInit;
 
 - (void)addNewAnnounceData:(AnnounceData *)newAnnounceData;
+
+- (void)setNavigationController:(UINavigationController *)naviCtler;
 
 @end

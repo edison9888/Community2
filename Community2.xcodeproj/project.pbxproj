@@ -276,6 +276,7 @@
 		4DC786A71713B7C700E3D98C /* 085.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DC785FD1713B7C700E3D98C /* 085.png */; };
 		4DC786A81713B7C700E3D98C /* 085@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DC785FE1713B7C700E3D98C /* 085@2x.png */; };
 		4DC786AB1713C25C00E3D98C /* RichTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC786AA1713C25C00E3D98C /* RichTextView.m */; };
+		4DD6D3D81724DF6700682C91 /* AnnounceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D3D71724DF6700682C91 /* AnnounceDetailViewController.m */; };
 		4DED79D316F05BE600408F67 /* DetialGuildTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DED79D216F05BE600408F67 /* DetialGuildTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -596,6 +597,8 @@
 		4DC785FE1713B7C700E3D98C /* 085@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "085@2x.png"; path = "MainFunc/Posts/FaceBoard/imgs/face/085@2x.png"; sourceTree = "<group>"; };
 		4DC786A91713C25C00E3D98C /* RichTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RichTextView.h; path = MainFunc/Posts/RichTextView/RichTextView.h; sourceTree = "<group>"; };
 		4DC786AA1713C25C00E3D98C /* RichTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RichTextView.m; path = MainFunc/Posts/RichTextView/RichTextView.m; sourceTree = "<group>"; };
+		4DD6D3D61724DF6700682C91 /* AnnounceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnnounceDetailViewController.h; path = MainFunc/Announcement/AnnounceDetailViewController.h; sourceTree = "<group>"; };
+		4DD6D3D71724DF6700682C91 /* AnnounceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnnounceDetailViewController.m; path = MainFunc/Announcement/AnnounceDetailViewController.m; sourceTree = "<group>"; };
 		4DED79D116F05BE600408F67 /* DetialGuildTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetialGuildTableViewCell.h; path = Guilds/DetialGuildTableViewCell.h; sourceTree = "<group>"; };
 		4DED79D216F05BE600408F67 /* DetialGuildTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetialGuildTableViewCell.m; path = Guilds/DetialGuildTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -829,6 +832,8 @@
 				4D0D55ED171D35CD00BD93C9 /* AddAnnounceViewController.m */,
 				4D1126A9171E721F00F202B8 /* DrawAnnounceView.h */,
 				4D1126AA171E721F00F202B8 /* DrawAnnounceView.m */,
+				4DD6D3D61724DF6700682C91 /* AnnounceDetailViewController.h */,
+				4DD6D3D71724DF6700682C91 /* AnnounceDetailViewController.m */,
 			);
 			name = Announcement;
 			sourceTree = "<group>";
@@ -1483,6 +1488,7 @@
 				4D0D55EA171CF01A00BD93C9 /* AnnounceData.m in Sources */,
 				4D0D55EE171D35CD00BD93C9 /* AddAnnounceViewController.m in Sources */,
 				4D1126AB171E721F00F202B8 /* DrawAnnounceView.m in Sources */,
+				4DD6D3D81724DF6700682C91 /* AnnounceDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

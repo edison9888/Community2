@@ -1,28 +1,30 @@
 //
-//  AddAnnounceViewController.m
+//  AnnounceDetailViewController.m
 //  Community2
 //
-//  Created by 赵 峰 on 13-4-16.
+//  Created by 赵 峰 on 13-4-22.
 //  Copyright (c) 2013年 赵 峰. All rights reserved.
 //
 
-#import "AddAnnounceViewController.h"
-#import "AnnounceData.h"
+#import "AnnounceDetailViewController.h"
 
+#define SCREEN_WIDTH    [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_HEIGHT   [[UIScreen mainScreen] bounds].size.height
+#define NAVBAR_HEIGHT   44
+#define SEGBAR_HEIGHT   44
 
-@interface AddAnnounceViewController ()
+@interface AnnounceDetailViewController ()
 
 @end
 
-@implementation AddAnnounceViewController
+@implementation AnnounceDetailViewController
 
-@synthesize titleTextField, settingTableView, contentTextView, drawAnnounceView, advancedTimeCell, contentLabel,
-            beforeTimePicker, datePicker, beforeTimeSourceArray, dateLabel, beforeTimeLabel, date, aheadOfAlarm, isNeedAlarm, guildName, announceView;
+@synthesize contentTextView, finishBtn, deleteBtn, settingTableView, beforeTimeSourceArray, datePicker, beforeTimePicker, advancedTimeCell, dateLabel, beforeTimeLabel, annDate, aheadOfAlarm, isNeedAlarm, titleTextField, annContent, annTitle, detailData;
 
-NSTimeInterval tmpAnimationDuration = 0.3;
-CGRect         tmpFrame;
-NSIndexPath    *tmpIndex;
-int            tmpI = 3;
+NSTimeInterval tmpAnimationDuration2 = 0.3;
+CGRect         tmpFrame2;
+NSIndexPath    *tmpIndex2;
+int            tmpI2 = 3;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,11 +35,27 @@ int            tmpI = 3;
     return self;
 }
 
+- (void)selfInitWithData:(AnnounceData *)data
+{
+    self.detailData = data;
+    self.annDate = data.date;
+    self.annTitle = data.title;
+    self.annContent = data.content;
+    
+    self.aheadOfAlarm = data.aheadOfAlarm;
+    self.isNeedAlarm = data.isNeedAlarm;
+    self.guildName = data.guildName;
+    
+    if (!self.isNeedAlarm)
+    {
+        tmpI2 = 2;
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-
     self.contentTextView.layer.borderColor = UIColor.grayColor.CGColor;
     self.contentTextView.layer.borderWidth = 2;
     [self.contentTextView.layer setCornerRadius: 6];
@@ -48,21 +66,11 @@ int            tmpI = 3;
     self.settingTableView.delegate = self;
     self.settingTableView.dataSource = self;
     
-    self.navigationItem.title = @"添加公会";
+    self.navigationItem.title = @"详细通知";
     
-    UIBarButtonItem *addAnnounceBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(clickAddAnnounce)];
-    self.navigationItem.rightBarButtonItem = addAnnounceBtnItem;
-    addAnnounceBtnItem = nil;
-    
-    UIBarButtonItem *cancelBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(clickCancelAnnounce)];
-    self.navigationItem.leftBarButtonItem = cancelBtnItem;
-    cancelBtnItem = nil;
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    
-    tmpFrame = self.view.frame;
-    tmpFrame.origin.y -= 20;
-    tmpFrame.size.height -= 44;
+    tmpFrame2 = self.view.frame;
+    tmpFrame2.origin.y -= 20;
+    tmpFrame2.size.height -= 44;
     
     self.beforeTimeSourceArray = [[NSMutableArray alloc] initWithCapacity:0];
     
@@ -72,30 +80,17 @@ int            tmpI = 3;
         [self.beforeTimeSourceArray addObject:tmpString];
         tmpString = nil;
     }
-  
-//  delete the draw line for not success
-//    NSMutableDictionary *tmpDic = [[NSMutableDictionary alloc] init];
-//    [tmpDic setObject:[NSNumber numberWithInt:self.settingTableView.frame.origin.x].stringValue forKey:@"bPx1"];
-//    [tmpDic setObject:[NSNumber numberWithInt:self.settingTableView.frame.origin.y].stringValue forKey:@"bPy1"];
-//    [tmpDic setObject:[NSNumber numberWithInt:self.settingTableView.frame.origin.x + self.settingTableView.frame.size.width].stringValue forKey:@"bPx2"];
-//    [tmpDic setObject:[NSNumber numberWithInt:self.settingTableView.frame.origin.y].stringValue forKey:@"bPy2"];
-//    
-//    [tmpDic setObject:[NSNumber numberWithInt:self.settingTableView.frame.origin.x].stringValue forKey:@"bPx3"];
-//    [tmpDic setObject:[NSNumber numberWithInt:self.settingTableView.frame.origin.y + self.settingTableView.frame.size.height].stringValue forKey:@"bPy3"];
-//    
-//    [tmpDic setObject:[NSNumber numberWithInt:self.settingTableView.frame.origin.x + self.settingTableView.frame.size.width].stringValue forKey:@"bPx4"];
-//    [tmpDic setObject:[NSNumber numberWithInt:self.settingTableView.frame.origin.y + self.settingTableView.frame.size.height].stringValue forKey:@"bPy4"];
-//    
-//    self.drawAnnounceView = [[DrawAnnounceView alloc] initWithData:self.settingTableView.separatorColor tmpFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) tmpLineDic:tmpDic];
-//    
-//    tmpDic = nil;
-//    
-//    [self.view addSubview:self.drawAnnounceView];
-
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    
+    self.titleTextField.text = self.annTitle;
+    self.contentTextView.text = self.annContent;
+    
+    UIBarButtonItem *addAnnounceBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(clickSaveAnnounce)];
+    self.navigationItem.rightBarButtonItem = addAnnounceBtnItem;
+    addAnnounceBtnItem = nil;
     
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -103,32 +98,25 @@ int            tmpI = 3;
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewDidUnload
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-    self.titleTextField = nil;
-    self.settingTableView = nil;
-    self.contentTextView = nil;
-    self.advancedTimeCell = nil;
-    self.contentLabel = nil;
-    self.beforeTimeSourceArray = nil;
-    self.beforeTimePicker = nil;
-    self.datePicker = nil;
-    self.dateLabel = nil;
-    self.beforeTimeLabel = nil;
-    self.date = nil;
-    self.guildName = nil;
-    self.announceView = nil;
+- (void)viewDidUnload {
+
+    [self setContentTextView:nil];
+    [self setFinishBtn:nil];
+    [self setDeleteBtn:nil];
+    [self setSettingTableView:nil];
+    [self setBeforeTimeSourceArray:nil];
+    [self setTitleTextField:nil];
+    [self setBeforeTimePicker:nil];
+    [self setDatePicker:nil];
+    [self setAdvancedTimeCell:nil];
+    [self setDateLabel:nil];
+    [self setBeforeTimeLabel:nil];
+    [self setAnnDate:nil];
+    [self setGuildName:nil];
+    [self setDetailData:nil];
     
     [super viewDidUnload];
 }
-
-- (void)setAnnounceViewId:(id)tmpAnnounceView
-{
-    self.announceView = tmpAnnounceView;
-}
-
-
 
 //resign first responder when touch anywhere
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -148,14 +136,17 @@ int            tmpI = 3;
 {
     [self.contentTextView resignFirstResponder];
     
-    [UIView animateWithDuration:tmpAnimationDuration
+    [UIView animateWithDuration:tmpAnimationDuration2
                      animations:^{
                          
-                         self.view.frame = tmpFrame;
+                         self.view.frame = tmpFrame2;
+                         self.finishBtn.alpha = 1;
+                         self.deleteBtn.alpha = 1;
                      }
-                    completion:^(BOOL finished) {
-                        
-                    }];
+                     completion:^(BOOL finished) {
+                         
+                     }];
+    
     
 }
 
@@ -182,11 +173,12 @@ int            tmpI = 3;
             self.beforeTimeLabel.text = [self.beforeTimeSourceArray objectAtIndex:seletedNum];
             self.aheadOfAlarm = seletedNum * 10;
             
+            self.aheadOfAlarm = seletedNum * 10;
         }
-            break;
+            
         default:
         {
-
+            
         }
             break;
     }
@@ -287,7 +279,7 @@ int            tmpI = 3;
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return tmpI;
+    return tmpI2;
 }
 
 
@@ -314,8 +306,7 @@ int            tmpI = 3;
             
             UISwitch *tmpSwitch = [[UISwitch alloc] init];
             tmpSwitch.frame = CGRectMake(203, 8, 79, 27);
-            tmpSwitch.on = YES;
-            self.isNeedAlarm = 1;
+            tmpSwitch.on = self.isNeedAlarm;
             [cell addSubview:tmpSwitch];
             [tmpSwitch addTarget:self action:@selector(switchAlarmSetting:) forControlEvents:UIControlEventValueChanged];
             [cell addSubview:tmpSwitch];
@@ -328,17 +319,18 @@ int            tmpI = 3;
         {
             UILabel *tmpLabel = [[UILabel alloc] init];
             
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"yyyy-MM-dd   EEEE   a HH:mm"];
-            tmpLabel.text = [dateFormatter stringFromDate:[NSDate date]];
+//            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//            [dateFormatter setDateFormat:@"yyyy-MM-dd   EEEE   a HH:mm"];
+//            tmpLabel.text = [dateFormatter stringFromDate:[NSDate date]];
+            tmpLabel.text = self.annDate;
             
-//            tmpLabel.text = @"2013年04月17日 星期三 下午18:00";
+            //            tmpLabel.text = @"2013年04月17日 星期三 下午18:00";
             tmpLabel.frame = CGRectMake(0, 0, 280, 43);
             tmpLabel.textAlignment = UITextAlignmentCenter;
             self.dateLabel = tmpLabel;
             [cell addSubview:tmpLabel];
             tmpLabel = nil;
-            dateFormatter = nil;
+//            dateFormatter = nil;
         }
             break;
             
@@ -351,14 +343,15 @@ int            tmpI = 3;
             tmpLabel = nil;
             
             UILabel *timeLabel = [[UILabel alloc] init];
-            timeLabel.text = @"10 min  ";
+//            timeLabel.text = @"10 min  ";
+            timeLabel.text = [NSString stringWithFormat:@"%d min  ", self.aheadOfAlarm];
             timeLabel.frame = CGRectMake(140, 0, 135, 43);
             timeLabel.textAlignment = UITextAlignmentRight;
             self.beforeTimeLabel = timeLabel;
             [cell addSubview:timeLabel];
             timeLabel = nil;
             
-            tmpIndex = indexPath;
+            tmpIndex2 = indexPath;
             
             self.advancedTimeCell = cell;
         }
@@ -374,27 +367,30 @@ int            tmpI = 3;
 }
 
 #pragma mark Button event
-- (void)clickAddAnnounce
-{
-    NSString *tmpDate = self.dateLabel.text;
-    NSString *tmpTitle = self.titleTextField.text;
-    NSInteger tmpAheadOfAlarm = self.aheadOfAlarm;
-    NSString *tmpContent = self.contentTextView.text;
-    NSInteger tmpIsAlarmed = self.isNeedAlarm;
-    
-    AnnounceData *newData = [[AnnounceData alloc] initWithData:tmpDate title:tmpTitle aheadOfAlarm:tmpAheadOfAlarm content:tmpContent isNeedAlarm:tmpIsAlarmed isFinished:0 isExpired:0 guildName:@"随便"];
-    
-    [self.announceView addNewAnnounce:newData];
-    
+- (IBAction)clickFinishBtn:(id)sender {
+ 
+    NSLog(@"save");
+    [self.delegate announceFinish];
     [self.navigationController popViewControllerAnimated:YES];
-    
-    tmpDate = nil;
-    tmpTitle = nil;
-    tmpContent = nil;
 }
 
-- (void)clickCancelAnnounce
+- (IBAction)clickDeleteBtn:(id)sender {
+    
+    NSLog(@"delete");
+    [self.delegate announceDelete];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)clickSaveAnnounce
 {
+    self.detailData.date = self.dateLabel.text;
+    self.detailData.title = self.titleTextField.text;
+    self.detailData.content = self.contentTextView.text;
+    self.detailData.isNeedAlarm = self.isNeedAlarm;
+    self.detailData.aheadOfAlarm = self.aheadOfAlarm;
+    
+    NSLog(@"save");
+    [self.delegate announceUpdate:self.detailData];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -405,19 +401,10 @@ int            tmpI = 3;
     if (!tmpSwitcher.isOn)
     {
         
-        [UIView animateWithDuration:tmpAnimationDuration
+        [UIView animateWithDuration:tmpAnimationDuration2
                          animations:^{
-                             
-                             CGRect tmpRect = self.contentTextView.frame;
-                             tmpRect.origin.y -= 40;
-                             self.contentTextView.frame = tmpRect;
-                             
-                             tmpRect = self.contentLabel.frame;
-                             tmpRect.origin.y -= 40;
-                             self.contentLabel.frame = tmpRect;
-                             
-                             self.advancedTimeCell.alpha = 0;
-                             
+                           
+                             self.advancedTimeCell.alpha = 0;                           
                              
                          }
                          completion:^(BOOL finished) {
@@ -427,23 +414,13 @@ int            tmpI = 3;
     }
     else
     {
-//        tmpI = 3;
-//        [self.settingTableView reloadData];
+        //        tmpI = 3;
+        //        [self.settingTableView reloadData];
         
-        [UIView animateWithDuration:tmpAnimationDuration
+        [UIView animateWithDuration:tmpAnimationDuration2
                          animations:^{
                              
-                             CGRect tmpRect = self.contentTextView.frame;
-                             tmpRect.origin.y += 40;
-                             self.contentTextView.frame = tmpRect;
-                             
-                             tmpRect = self.contentLabel.frame;
-                             tmpRect.origin.y += 40;
-                             self.contentLabel.frame = tmpRect;
-                             
                              self.advancedTimeCell.alpha = 1;
-                             
-                             
                          }
                          completion:^(BOOL finished) {
                              
@@ -461,7 +438,7 @@ int            tmpI = 3;
     
     if ([self.contentTextView isFirstResponder])
     {
-
+        
         CGRect beginFrame = [[[notification userInfo] valueForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
         CGRect endFrame = [[[notification userInfo] valueForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
         UIViewAnimationCurve animationCurve	= [[[notification userInfo] valueForKey:UIKeyboardAnimationCurveUserInfoKey] intValue];
@@ -471,15 +448,38 @@ int            tmpI = 3;
         [UIView setAnimationCurve:animationCurve];
         [UIView setAnimationDuration:animationDuration];
         
+        int detaY = endFrame.origin.y - beginFrame.origin.y;
+        if (SCREEN_HEIGHT == 480)
+        {
+            if (abs(detaY) < 200)
+            {
+                detaY = 0;
+            }
+            else
+            {
+                detaY += 40;
+            }
+            
+        }
+        else
+        {
+            if (abs(detaY) < 200)
+            {
+                detaY = 0;
+            }
+        }
+        
+            
+        
         self.view.frame = CGRectMake(self.view.frame.origin.x + (endFrame.origin.x - beginFrame.origin.x),
-                                     self.view.frame.origin.y + (endFrame.origin.y - beginFrame.origin.y),
+                                     self.view.frame.origin.y + detaY,
                                      self.view.frame.size.width,
                                      self.view.frame.size.height);
         
         [UIView commitAnimations];
+        self.finishBtn.alpha = 0;
+        self.deleteBtn.alpha = 0;
     }
 	
 }
-
-
 @end
