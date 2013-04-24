@@ -12,10 +12,21 @@
 #import "PostDetailViewController.h"
 #import "MainFuncViewController.h"
 
+#import "PullingRefreshTableView.h"
+
 #define TEXTFIELDTAG	100
 #define TOOLBARTAG		200
 #define TABLEVIEWTAG	300
 #define LOADINGVIEWTAG	400
+
+@interface MainFuncPostsView () <PullingRefreshTableViewDelegate>
+
+@property (retain,nonatomic) PullingRefreshTableView *tableView;
+@property (retain,nonatomic) NSMutableArray *list;
+@property (nonatomic) BOOL refreshing;
+@property (assign,nonatomic) NSInteger page;
+
+@end
 
 @implementation MainFuncPostsView
 
@@ -57,16 +68,99 @@
                   [PostsListData dataWithText:@"完不成险中求胜的进 我帮你们配卡" postInfoBrief:@"有谁完不成险中求胜" postAuth:@"suoyingshuai" likeNum:100 replyNum:100],
                   nil];
     
+    //nomal tableview
+//    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, self.frame.size.height) style:UITableViewStylePlain];
+//    tableView.delegate = self;
+//    tableView.dataSource = self;
+//    //tableView.backgroundColor = [UIColor colorWithRed:0.859f green:0.886f blue:0.929f alpha:1.0f];
+//    tableView.backgroundColor = [UIColor clearColor];
+//    tableView.tag = TABLEVIEWTAG;
+//    [self addSubview:tableView];
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, self.frame.size.height) style:UITableViewStylePlain];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    //tableView.backgroundColor = [UIColor colorWithRed:0.859f green:0.886f blue:0.929f alpha:1.0f];
-    tableView.backgroundColor = [UIColor clearColor];
-    tableView.tag = TABLEVIEWTAG;
-    [self addSubview:tableView];
+    //pull table view
+    _list = [[NSMutableArray alloc] init ];
+    
+    CGRect bounds = self.bounds;
+//    bounds.size.height -= 44.f;
+    _tableView = [[PullingRefreshTableView alloc] initWithFrame:bounds pullingDelegate:self];
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    _tableView.backgroundColor = [UIColor clearColor];
+    _tableView.tag = TABLEVIEWTAG;
+    [self addSubview:_tableView];
 	
 	return self;
+}
+
+//pull table view
+- (void)selfViewWillAppear
+{
+    if (self.page == 0)
+    {
+        [self.tableView launchRefreshing];
+    }
+}
+
+-(void)dealloc
+{
+    _list = nil;
+    _tableView = nil;
+}
+
+#pragma mark - Your actions
+
+- (void)loadData{
+    self.page++;
+    if (self.refreshing) {
+        self.page = 1;
+        self.refreshing = NO;
+        [self.list removeAllObjects];
+    }
+    for (int i = 0; i < 10; i++) {
+        [self.list addObject:@"ROW"];
+    }
+    if (self.page >= 3)
+    {
+        [self.tableView tableViewDidFinishedLoadingWithMessage:@"All loaded!"];
+        self.tableView.reachedTheEnd  = YES;
+    }
+    else
+    {
+        [self.tableView tableViewDidFinishedLoading];
+        self.tableView.reachedTheEnd  = NO;
+        [self.tableView reloadData];
+    }
+}
+
+#pragma mark - PullingRefreshTableViewDelegate
+- (void)pullingTableViewDidStartRefreshing:(PullingRefreshTableView *)tableView
+{
+    self.refreshing = YES;
+    [self performSelector:@selector(loadData) withObject:nil afterDelay:1.f];
+}
+
+- (NSDate *)pullingTableViewRefreshingFinishedDate
+{
+    NSDateFormatter *df = [[NSDateFormatter alloc] init ];
+    df.dateFormat = @"yyyy-MM-dd HH:mm";
+    NSDate *date = [df dateFromString:@"2012-05-03 10:10"];
+    df = nil;
+    return date;
+}
+
+- (void)pullingTableViewDidStartLoading:(PullingRefreshTableView *)tableView
+{
+    [self performSelector:@selector(loadData) withObject:nil afterDelay:1.f];
+}
+
+#pragma mark - Scroll
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    [self.tableView tableViewDidScroll:scrollView];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    [self.tableView tableViewDidEndDragging:scrollView];
 }
 
 

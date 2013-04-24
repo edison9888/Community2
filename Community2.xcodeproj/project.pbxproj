@@ -92,6 +92,11 @@
 		4DAF9CC61716667700659EB4 /* WEPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DAF9C9E1716661900659EB4 /* WEPopoverController.m */; };
 		4DAF9CC91716667700659EB4 /* WETouchableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DAF9CA11716661900659EB4 /* WETouchableView.m */; };
 		4DAF9CCC1716670A00659EB4 /* PostDetailPopContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DAF9CCB1716670A00659EB4 /* PostDetailPopContentViewController.m */; };
+		4DBA960D1727B28400F6AE2F /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DBA96091727B28400F6AE2F /* blueArrow.png */; };
+		4DBA960E1727B28400F6AE2F /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DBA960A1727B28400F6AE2F /* blueArrow@2x.png */; };
+		4DBA960F1727B28400F6AE2F /* blueArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DBA960B1727B28400F6AE2F /* blueArrowDown.png */; };
+		4DBA96101727B28400F6AE2F /* blueArrowDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DBA960C1727B28400F6AE2F /* blueArrowDown@2x.png */; };
+		4DBA96111727B2CB00F6AE2F /* PullingRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DBA96071727B27A00F6AE2F /* PullingRefreshTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4DC785371713B25800E3D98C /* ReplyEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC785361713B25800E3D98C /* ReplyEditViewController.m */; };
 		4DC7853A1713B33F00E3D98C /* FaceBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC785391713B33F00E3D98C /* FaceBoardView.m */; };
 		4DC7853D1713B3D800E3D98C /* FaceBoardPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7853C1713B3D800E3D98C /* FaceBoardPageControl.m */; };
@@ -408,6 +413,12 @@
 		4DAF9CB11716664A00659EB4 /* popoverBgSimple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = popoverBgSimple.png; path = MainFunc/Posts/PopOver/imgs/popoverBgSimple.png; sourceTree = "<group>"; };
 		4DAF9CCA1716670A00659EB4 /* PostDetailPopContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostDetailPopContentViewController.h; path = MainFunc/Posts/PostDetail/PostDetailPopContentViewController.h; sourceTree = "<group>"; };
 		4DAF9CCB1716670A00659EB4 /* PostDetailPopContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostDetailPopContentViewController.m; path = MainFunc/Posts/PostDetail/PostDetailPopContentViewController.m; sourceTree = "<group>"; };
+		4DBA96071727B27A00F6AE2F /* PullingRefreshTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PullingRefreshTableView.m; sourceTree = "<group>"; };
+		4DBA96081727B27A00F6AE2F /* PullingRefreshTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PullingRefreshTableView.h; sourceTree = "<group>"; };
+		4DBA96091727B28400F6AE2F /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		4DBA960A1727B28400F6AE2F /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
+		4DBA960B1727B28400F6AE2F /* blueArrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrowDown.png; sourceTree = "<group>"; };
+		4DBA960C1727B28400F6AE2F /* blueArrowDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrowDown@2x.png"; sourceTree = "<group>"; };
 		4DC785351713B25800E3D98C /* ReplyEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReplyEditViewController.h; path = MainFunc/Posts/PostDetail/ReplyEditViewController.h; sourceTree = "<group>"; };
 		4DC785361713B25800E3D98C /* ReplyEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReplyEditViewController.m; path = MainFunc/Posts/PostDetail/ReplyEditViewController.m; sourceTree = "<group>"; };
 		4DC785381713B33F00E3D98C /* FaceBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FaceBoardView.h; path = MainFunc/Posts/FaceBoard/FaceBoardView.h; sourceTree = "<group>"; };
@@ -797,6 +808,7 @@
 		4D9A2ACA16F177A0005957E4 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
+				4DBA96041727B23F00F6AE2F /* PullingRefreshTableView */,
 				4D70DE951717B07A00E98E44 /* NavigationMenuView */,
 				4DAF9C961716653800659EB4 /* Popover */,
 				4DC785341713B1B300E3D98C /* RichTextView */,
@@ -940,6 +952,27 @@
 				4DAF9CAF1716664A00659EB4 /* popoverBg.png */,
 				4DAF9CB01716664A00659EB4 /* popoverBg@2x.png */,
 				4DAF9CB11716664A00659EB4 /* popoverBgSimple.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		4DBA96041727B23F00F6AE2F /* PullingRefreshTableView */ = {
+			isa = PBXGroup;
+			children = (
+				4DBA96061727B26C00F6AE2F /* images */,
+				4DBA96081727B27A00F6AE2F /* PullingRefreshTableView.h */,
+				4DBA96071727B27A00F6AE2F /* PullingRefreshTableView.m */,
+			);
+			name = PullingRefreshTableView;
+			sourceTree = "<group>";
+		};
+		4DBA96061727B26C00F6AE2F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				4DBA96091727B28400F6AE2F /* blueArrow.png */,
+				4DBA960A1727B28400F6AE2F /* blueArrow@2x.png */,
+				4DBA960B1727B28400F6AE2F /* blueArrowDown.png */,
+				4DBA960C1727B28400F6AE2F /* blueArrowDown@2x.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -1434,6 +1467,10 @@
 				4D3E9FC5171BCDD500ADD8D7 /* alarm.png in Resources */,
 				4D2EE1EB171BDFB2005445BF /* remindCell.xib in Resources */,
 				4D372584171C28EC0060D44B /* FinishCell.xib in Resources */,
+				4DBA960D1727B28400F6AE2F /* blueArrow.png in Resources */,
+				4DBA960E1727B28400F6AE2F /* blueArrow@2x.png in Resources */,
+				4DBA960F1727B28400F6AE2F /* blueArrowDown.png in Resources */,
+				4DBA96101727B28400F6AE2F /* blueArrowDown@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1444,6 +1481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DBA96111727B2CB00F6AE2F /* PullingRefreshTableView.m in Sources */,
 				4D70DEAE1717B0F300E98E44 /* SICellSelection.m in Sources */,
 				4D70DEAF1717B0F300E98E44 /* SIMenuButton.m in Sources */,
 				4D70DEB01717B0F300E98E44 /* SIMenuCell.m in Sources */,

@@ -18,4 +18,6 @@
 
 - (void)setNavigationController:(UINavigationController *)naviCtler;
 
+- (void)selfViewWillAppear;
+
 @end
