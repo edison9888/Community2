@@ -41,6 +41,8 @@
     [self.postsView setNavigationController:self.navigationController];
     
     self.navigationItem.title = @"DarkBlood";
+    self.chatView.opaque = YES;
+    self.chatView.backgroundColor = [UIColor whiteColor];
     
     if (_menu == nil)
     {

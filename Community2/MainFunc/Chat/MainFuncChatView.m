@@ -147,67 +147,61 @@
     return [self init];
 }
 
-//- (id)initWithFrame:(CGRect)frame
-//{
-//    self = [super initWithFrame:frame];
-//    return [self init];
-//}
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    return [self init];
+}
 
-//- (id)initWithFrame:(CGRect)frame style:(UITableViewStyle)style
-//{
-//    self = [super initWithFrame:frame style:UITableViewStylePlain];
-//    return [self init];
-//}
 - (id)init {
-	if(self = [super init]) {
-		//self = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-        
-		chatArray = [[NSMutableArray alloc] initWithCapacity:0];
-		isMySpeaking = YES;
-		loadingLog = NO;
-        
-		currentString = [[NSMutableString alloc] initWithCapacity:0];
-		currentChatInfo = [[NSMutableDictionary alloc] initWithCapacity:3];
-		
-		UITextField *textfield = [[UITextField alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 300.0f, 31.0f)];
-		textfield.tag = TEXTFIELDTAG;
-		textfield.delegate = self;
-		textfield.autocorrectionType = UITextAutocorrectionTypeNo;
-		textfield.autocapitalizationType = UITextAutocapitalizationTypeNone;
-		textfield.enablesReturnKeyAutomatically = YES;
-		textfield.borderStyle = UITextBorderStyleRoundedRect;
-		textfield.returnKeyType = UIReturnKeySend;
-		textfield.clearButtonMode = UITextFieldViewModeWhileEditing;
-		UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, self.frame.size.height - TOOLBAR_HEIGHT, 320.0f, 44.0f)];
-		toolBar.tag = TOOLBARTAG;
-		NSMutableArray* allitems = [[NSMutableArray alloc] init];
-		[allitems addObject:[[UIBarButtonItem alloc] initWithCustomView:textfield]];
-		[toolBar setItems:allitems];
 
-		[self addSubview:toolBar];
+    //self = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    
+    chatArray = [[NSMutableArray alloc] initWithCapacity:0];
+    isMySpeaking = YES;
+    loadingLog = NO;
+    
+    currentString = [[NSMutableString alloc] initWithCapacity:0];
+    currentChatInfo = [[NSMutableDictionary alloc] initWithCapacity:3];
+    
+    UITextField *textfield = [[UITextField alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 300.0f, 31.0f)];
+    textfield.tag = TEXTFIELDTAG;
+    textfield.delegate = self;
+    textfield.autocorrectionType = UITextAutocorrectionTypeNo;
+    textfield.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    textfield.enablesReturnKeyAutomatically = YES;
+    textfield.borderStyle = UITextBorderStyleRoundedRect;
+    textfield.returnKeyType = UIReturnKeySend;
+    textfield.clearButtonMode = UITextFieldViewModeWhileEditing;
+    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, self.frame.size.height - TOOLBAR_HEIGHT, 320.0f, 44.0f)];
+    toolBar.tag = TOOLBARTAG;
+    NSMutableArray* allitems = [[NSMutableArray alloc] init];
+    [allitems addObject:[[UIBarButtonItem alloc] initWithCustomView:textfield]];
+    [toolBar setItems:allitems];
 
-		
-		UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, self.frame.size.height - TOOLBAR_HEIGHT) style:UITableViewStylePlain];
-		tableView.delegate = self;
-		tableView.dataSource = self;
-		tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-		tableView.backgroundColor = [UIColor colorWithRed:0.859f green:0.886f blue:0.929f alpha:1.0f];
-		tableView.tag = TABLEVIEWTAG;
-		[self addSubview:tableView];
+    [self addSubview:toolBar];
 
-		
-		UIView *loadingView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, self.frame.size.height - TOOLBAR_HEIGHT)];
-		loadingView.backgroundColor = [UIColor darkGrayColor];
-		UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-		activityView.center = CGPointMake(loadingView.frame.size.width/2, loadingView.frame.size.height/2);
-		[activityView startAnimating];
-		[loadingView addSubview:activityView];
+    
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, self.frame.size.height - TOOLBAR_HEIGHT) style:UITableViewStylePlain];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    tableView.backgroundColor = [UIColor colorWithRed:0.859f green:0.886f blue:0.929f alpha:1.0f];
+    tableView.tag = TABLEVIEWTAG;
+    [self addSubview:tableView];
 
-		loadingView.hidden = YES;
-		loadingView.tag = LOADINGVIEWTAG;
-		[self addSubview:loadingView];
+    
+    UIView *loadingView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, self.frame.size.height - TOOLBAR_HEIGHT)];
+    loadingView.backgroundColor = [UIColor darkGrayColor];
+    UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    activityView.center = CGPointMake(loadingView.frame.size.width/2, loadingView.frame.size.height/2);
+    [activityView startAnimating];
+    [loadingView addSubview:activityView];
 
-	}
+    loadingView.hidden = YES;
+    loadingView.tag = LOADINGVIEWTAG;
+    [self addSubview:loadingView];
+
 	
 	return self;
 }

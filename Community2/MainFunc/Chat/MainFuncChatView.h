@@ -21,4 +21,5 @@
 	BOOL				isMySpeaking;
 	BOOL				loadingLog;
 }
+- (id) selfInit;
 @end
