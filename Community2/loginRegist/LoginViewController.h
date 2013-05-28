@@ -12,6 +12,8 @@
 @interface LoginViewController : UIViewController
 
 @property (nonatomic, weak) id <FirstViewControllerDelegate> delegate;
+@property (strong, nonatomic) IBOutlet UITextField *IDTextField;
+@property (strong, nonatomic) IBOutlet UITextField *PasswordTextField;
 
 - (IBAction)cancelView:(id)sender;
 

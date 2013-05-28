@@ -1,25 +1,18 @@
 //
-//  LoginViewController.m
+//  JoinGuildViewController.m
 //  Community2
 //
-//  Created by 赵 峰 on 13-3-11.
+//  Created by 赵 峰 on 13-5-10.
 //  Copyright (c) 2013年 赵 峰. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "JoinGuildViewController.h"
 
-@interface LoginViewController ()
+@interface JoinGuildViewController ()
 
 @end
 
-@implementation LoginViewController
-
-@synthesize delegate;
-
-- (IBAction)cancelView:(id)sender
-{
-    [self.delegate firstViewControllerDidCancel:self];
-}
+@implementation JoinGuildViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,22 +35,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidUnload {
+    [self setAuthCodeTextField:nil];
+    [super viewDidUnload];
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"touches began ");
-    if([self.IDTextField isFirstResponder])
+    if([self.authCodeTextField isFirstResponder])
     {
-        [self.IDTextField resignFirstResponder];
+        [self.authCodeTextField resignFirstResponder];
     }
-    if([self.PasswordTextField isFirstResponder])
-    {
-        [self.PasswordTextField resignFirstResponder];
-    }
-}
-
-- (void)viewDidUnload {
-    [self setIDTextField:nil];
-    [self setPasswordTextField:nil];
-    [super viewDidUnload];
 }
 @end

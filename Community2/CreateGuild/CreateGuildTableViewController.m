@@ -108,6 +108,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.gameStyleSource = [[NSArray alloc] initWithObjects:@"MMO", @"RPG", @"ARPG", nil];
+    [self.tableView setDelaysContentTouches:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -215,6 +216,8 @@
     [super viewDidUnload];
 }
 
+
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"touches began ");
@@ -226,6 +229,8 @@
     {
         [self.guildBriefInfoTextView resignFirstResponder];
     }
+    
+    [super touchesBegan:touches withEvent:event];
 
 }
 

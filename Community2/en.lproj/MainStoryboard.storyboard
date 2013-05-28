@@ -146,15 +146,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="IDTextField" destination="bio-P4-DSc" id="Bdh-Ea-JBm"/>
+                        <outlet property="PasswordTextField" destination="qD8-Fj-m7M" id="3V8-wI-7bf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bkO-Ma-OgJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="645" y="1595"/>
         </scene>
-        <!--View Controller-->
+        <!--Regist View Controller-->
         <scene sceneID="iqh-AT-KuT">
             <objects>
-                <viewController id="vt5-ov-165" sceneMemberID="viewController">
+                <viewController id="vt5-ov-165" customClass="RegistViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4eU-wu-H8R">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -255,6 +259,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmPWTextField" destination="Ig1-MK-Psy" id="bj5-Yb-nK6"/>
+                        <outlet property="emailTextField" destination="gKo-pf-36n" id="OSP-1F-auA"/>
+                        <outlet property="nickNameTextField" destination="PNj-pK-L0P" id="2Z3-1S-eIg"/>
+                        <outlet property="passwordTextField" destination="p4W-Wo-4ZQ" id="zf7-ub-j34"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXd-b6-Fe8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -976,10 +986,10 @@
             </objects>
             <point key="canvasLocation" x="1171" y="831"/>
         </scene>
-        <!--View Controller - 加入工会-->
+        <!--Join Guild View Controller - 加入工会-->
         <scene sceneID="G5I-8F-Lui">
             <objects>
-                <viewController id="PKN-ju-bk2" sceneMemberID="viewController">
+                <viewController id="PKN-ju-bk2" customClass="JoinGuildViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nrm-mw-pVF">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1058,6 +1068,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="加入工会" id="Ct7-9r-Pn4"/>
+                    <connections>
+                        <outlet property="authCodeTextField" destination="1QG-PY-AOs" id="s4Y-OZ-MMa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Toi-Lc-dG7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1433,7 +1446,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="i5v-GQ-I8a"/>
-        <segue reference="HdC-Wq-L1N"/>
-        <segue reference="4gJ-v3-DCx"/>
+        <segue reference="6EK-Tg-bFR"/>
+        <segue reference="tcq-ol-bim"/>
     </inferredMetricsTieBreakers>
 </document>

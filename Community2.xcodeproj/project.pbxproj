@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D096DA2173C95A800553BDE /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D096DA1173C95A800553BDE /* RegistViewController.m */; };
+		4D096DA6173C98A100553BDE /* JoinGuildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D096DA5173C98A100553BDE /* JoinGuildViewController.m */; };
 		4D0D55EA171CF01A00BD93C9 /* AnnounceData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0D55E9171CF01A00BD93C9 /* AnnounceData.m */; };
 		4D0D55EE171D35CD00BD93C9 /* AddAnnounceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0D55ED171D35CD00BD93C9 /* AddAnnounceViewController.m */; };
 		4D0F091E17053B2C0063D682 /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0F091D17053B2C0063D682 /* reply.png */; };
@@ -286,6 +288,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D096DA0173C95A800553BDE /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistViewController.h; path = loginRegist/RegistViewController.h; sourceTree = "<group>"; };
+		4D096DA1173C95A800553BDE /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistViewController.m; path = loginRegist/RegistViewController.m; sourceTree = "<group>"; };
+		4D096DA4173C98A100553BDE /* JoinGuildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JoinGuildViewController.h; path = JoinGuild/JoinGuildViewController.h; sourceTree = "<group>"; };
+		4D096DA5173C98A100553BDE /* JoinGuildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JoinGuildViewController.m; path = JoinGuild/JoinGuildViewController.m; sourceTree = "<group>"; };
 		4D0D55E8171CF01A00BD93C9 /* AnnounceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnnounceData.h; path = MainFunc/Announcement/AnnounceData.h; sourceTree = "<group>"; };
 		4D0D55E9171CF01A00BD93C9 /* AnnounceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnnounceData.m; path = MainFunc/Announcement/AnnounceData.m; sourceTree = "<group>"; };
 		4D0D55EC171D35CD00BD93C9 /* AddAnnounceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddAnnounceViewController.h; path = MainFunc/Announcement/AddAnnounceViewController.h; sourceTree = "<group>"; };
@@ -855,6 +861,8 @@
 			children = (
 				4D9DCD9616EDA9FF0084B993 /* LoginViewController.h */,
 				4D9DCD9716EDA9FF0084B993 /* LoginViewController.m */,
+				4D096DA0173C95A800553BDE /* RegistViewController.h */,
+				4D096DA1173C95A800553BDE /* RegistViewController.m */,
 			);
 			name = loginRegist;
 			sourceTree = "<group>";
@@ -902,6 +910,8 @@
 				4DA0F61D16E5E060002D4531 /* FindGuildViewController.m */,
 				4D9EA8C816E7223200E710A5 /* FindGuildCell.h */,
 				4D9EA8C916E7223200E710A5 /* FindGuildCell.m */,
+				4D096DA4173C98A100553BDE /* JoinGuildViewController.h */,
+				4D096DA5173C98A100553BDE /* JoinGuildViewController.m */,
 			);
 			name = JoinGuild;
 			sourceTree = "<group>";
@@ -1527,6 +1537,8 @@
 				4D0D55EE171D35CD00BD93C9 /* AddAnnounceViewController.m in Sources */,
 				4D1126AB171E721F00F202B8 /* DrawAnnounceView.m in Sources */,
 				4DD6D3D81724DF6700682C91 /* AnnounceDetailViewController.m in Sources */,
+				4D096DA2173C95A800553BDE /* RegistViewController.m in Sources */,
+				4D096DA6173C98A100553BDE /* JoinGuildViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
